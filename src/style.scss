@@ -317,8 +317,9 @@ nav{
 
 .unique-solutions{
     @include flex-column-center(column,center,center);
-    width: 90vw;
+    max-width: 90vw;
     margin: 0 auto;
+    gap: 30px;
 }
 
 .unique-solutions-texts{
@@ -342,3 +343,97 @@ nav{
    font-size: 35px;
    color: vars.$white;
 }
+
+.unique-solutions{
+    @include flex-column-center(column,center,center);
+
+}
+.how-it-works-main-card{
+    border-radius: 15px;
+    width: 100%;
+    overflow: hidden;
+}
+.how-it-works-main-card-wrapper{
+    background-image: url(https://startersites.io/blocksy/smart-home/wp-content/uploads/2023/12/home-solutions-section-image-1.webp);
+    background-size: cover;
+    background-position: center;
+}
+.card-text-column{
+    @include flex-column-center(column,center,center);
+    align-items: start;
+    padding: 40px;
+}
+.card-text-header h2{
+    color: vars.$white;
+    max-width: 650px;
+    font-size: 25px;
+    margin: 0;
+}
+.learn-more{
+    button{
+        padding: 15px 26px;
+        margin-top: 30px;
+        background: vars.$orange;
+        color: vars.$white;
+        border: none;
+        border-radius: 15px;
+        font-weight: vars.$font-weight-600;
+        font-size: 16px;
+    }
+}
+
+.how-it-works-else-cards{
+    @include flex-row-center(row,center,center);
+    gap: 30px;
+    margin-bottom: 120px;
+    justify-content: start;
+}
+.how-it-works-card-1{
+    background-image: url(https://startersites.io/blocksy/smart-home/wp-content/uploads/2023/12/home-solutions-section-image-2.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 15px;
+}
+.how-it-works-card-container{
+    padding: 30px;
+}
+.how-it-works-card-2{
+    background-image: url(https://startersites.io/blocksy/smart-home/wp-content/uploads/2023/12/home-solutions-section-image-3.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 15px;
+    height: 100%;
+}
+
+// Blogs
+
+.blog{
+    @include flex-column-center(column,center,center);
+    max-width: 90vw;
+    margin: 0 auto;
+    gap: 30px;
+}
+
+.blog-texts{
+    text-align: left;
+    @include flex-column-center(column,center,center);
+    align-items: start;
+    justify-content: start;
+    width: 100%;
+}
+
+.blog-texts-header{
+    font-size: 16px;
+    color: vars.$orange;
+    font-weight: vars.$font-weight-600;
+    margin-bottom: 10px;
+}
+.blog-text h2{
+    margin: 0 auto 40px;
+    max-width: 1000px;
+    text-align: center;
+    font-size: 35px;
+    color: vars.$white;
+ }
