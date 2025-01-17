@@ -1,0 +1,249 @@
+// style.scss
+
+
+// Imports
+@use './variables' as vars;
+@use '/src/mixins' as *;
+
+
+// Styles
+
+body{
+    background-color: vars.$black;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}   
+
+// Main contnet
+
+main{
+    @include flex-column-center(column,center,center);
+    // background-color: rgba(255, 0, 0, 0.323);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    // background-image: url(assets/asset13.webp);
+    background-image: url(https://startersites.io/blocksy/smart-home/wp-content/uploads/2024/06/home-hero-section-image.webp);
+    margin-bottom: 80px;
+    padding-top: 250px;
+    gap: 50px;
+}
+
+
+// Navigation top
+
+nav{
+  @include  align-content-space-between(row,space-between,space-between);
+//   width:100%;
+   width: 90vw;
+   margin: 0 auto;
+}
+
+// Logo container
+.logo-container{
+    width: auto;
+    height: auto;
+    padding: 5px;
+}
+
+
+// Mid navigation 
+.nav-container ul{
+    list-style: none;
+    padding:0;
+}
+.nav-container ul{
+    @include flex-row-center(row,center,center);
+    font-size: 16px;
+    color: vars.$white;
+    font-weight: vars.$font-weight-600
+}
+.nav-container ul li{
+    padding: 0px 30px
+}
+
+// Side buttons
+
+.switch{
+  color: vars.$white
+}
+.side-buttons-container{
+    @include flex-row-center(row,center,center);
+
+}
+
+.button-container{
+    @include align-items-center(row,center,center);
+    color: vars.$white;
+    gap:5px;
+    padding: 5px 20px;
+    background: vars.$orange;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: vars.$font-weight-600
+    // font-weight: 600;
+}
+.download-icon{
+    @include flex-row-center(row,center,center);
+    color: vars.$white;
+}
+
+// under nav
+
+.under-nav{
+    @include align-content-space-between(row,space-between,space-between);
+    align-items:center;
+    width: 90vw;
+    margin: 0 auto;
+}
+
+.text-container{
+    border-radius: 25px;
+    padding: 40px 45px;
+    background:#000000d9;
+}
+
+.header h2{
+    font-size: 16px;
+    color: vars.$orange;
+    margin: 0px 0px 10px;
+}
+.header-text h2{
+    font-size: 35px;
+    color: vars.$white;
+    margin: 0;
+}
+.iphone-container img{
+    width: 672px;
+    height: 989px;
+    vertical-align: top;
+    display: inline-block;
+    box-sizing: border-box;
+    max-width: 100%;
+    height: auto;
+}
+
+// Smart home
+
+.smart-home{
+    @include flex-column-center(column,center,center);
+    width: 90vw;
+    margin: 0 auto;
+}
+.smart-home-texts{
+    align-items: start;
+}
+
+.smart-home-header{
+    font-size: 16px;
+    color: vars.$orange;
+    font-weight: vars.$font-weight-600;
+    margin-bottom: 10px;
+}
+.smart-home-text h1{
+    font-size: 35px;
+    color: vars.$white;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+.smart-home-pictures{
+    @include flex-row-center(row,center,center);
+    gap: 17px;
+    margin-bottom: 120px;
+}
+.smart-home-phone-pics{
+    @include flex-row-center(row,center,center);
+    gap: 17px;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+.phone-card{
+    border-radius: 15px;
+    background: vars.$white;
+    width: 307px;
+    height: 456px;
+}
+.phone-card:nth-child(2) img{
+    border-radius: 15px;
+}
+.phone-card:nth-child(3){
+    border-radius: 15px;
+    background: vars.$orange;
+}
+.phone-card img{
+    vertical-align: top;
+    display: inline-block;
+    box-sizing: border-box;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+}
+
+.smart-home-phone{
+  @include flex-column-center(column,center,center);
+  gap: 17px;
+}
+.smart-home-card{
+    @include flex-column-center(column,center,center);
+    border-radius: 15px;
+    background: vars.$white;
+    padding: 20px;
+}
+
+.smart-home-card svg{
+    margin:0px !important;
+    width: 45px !important;
+}
+.smart-home-card h3{
+    margin-bottom: 0px;
+    margin-top: 20px;
+}
+
+// Numbers
+
+.numbers{
+  width: 90vw;
+  margin: 0 auto;
+}
+
+.numbers-header h2{
+    margin: 0 auto 60px;
+    max-width: 1000px;
+    text-align: center;
+    font-size: 35px;
+    color: vars.$white;
+}
+
+.numbers-row{
+    @include flex-row-center(row,center,center);
+    gap: 30px;
+    justify-content: space-between;
+    margin-bottom: 120px;
+}
+.number-card{
+    @include flex-row-center(row,center,center);
+    align-items: start;
+    gap: 20px   ;
+}
+.number-profile svg{
+    fill:vars.$orange;
+    margin: 0px !important;
+    width: 50px !important;
+}
+.number-amount{
+    @include flex-column-center(column,center,center);
+    align-items: start;
+}
+
+.number{
+    color: vars.$white;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+.number-text{
+    color: vars.$gray2;
+    font-weight: vars.$font-weight-600;
+}
