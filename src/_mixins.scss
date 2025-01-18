@@ -135,13 +135,26 @@
     cursor: $pointer;
 }
 
-@mixin hover-animation($time: 0.3s, $anim: ease-in, $color: vars.$orange, $pointer:pointer) {
-    @include transition-hover($time, $anim);
-    @include orange-hover($color);
 
-    @if $pointer != null{
-        @include cursor-pointer($pointer);
+
+@mixin hover-animation($time: 0.1s, $anim: ease-in, $color: vars.$orange, $pointer: pointer, $cursor-only: false) {
+    @if $cursor-only == false {
+        @include transition-hover($time, $anim);
+        @include orange-hover($color);
     }
 
+    @include cursor-pointer($pointer);
 }
 
+
+@mixin svg-fill-hover($default-fill, $hover-fill: vars.$orange, $transition-duration: 0.2s , $pointer:pointer) {
+    fill: $default-fill; 
+    transition: fill $transition-duration ease; 
+  
+    &:hover {
+      fill: $hover-fill; 
+    }
+
+    @include cursor-pointer($pointer);
+  }
+  

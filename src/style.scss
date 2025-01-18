@@ -642,6 +642,8 @@ footer{
 .get-in-touch-infos ul li{
     list-style-type: none;
     @include flex-row-center(row,center,center);
+
+    
     column-gap: 15px;
     align-items:start;
 }
@@ -651,9 +653,12 @@ footer{
         fill: vars.$white;
         width: 18px;
         height: 18px;
+        @include svg-fill-hover(vars.$white, vars.$orange);
     }
     div{
         color: vars.$gray2;
+        @include hover-animation(0.1s, ease-in, vars.$orange, pointer);
+
     }
 }
 
@@ -670,12 +675,17 @@ footer{
         width: 6px !important;
         height: 12px !important;
         margin: 0 !important;
+
     }
     div{
         color: vars.$gray2;
+        @include hover-animation(0.1s, ease-in, vars.$orange, pointer);
     }
     list-style-type: none;
     @include flex-row-center(row,center,center);
+
+    
+
     column-gap: 15px;
     align-items:start;
 }
@@ -741,16 +751,17 @@ footer{
     margin: 0;
     list-style: none;
     @include flex-row-center(row,center,center);
-    gap: 30px   ;
+    gap: 30px;
     li{
-
         span svg{
-            fill: vars.$white;
+            @include svg-fill-hover(vars.$white, vars.$orange);
         }
+
     }
 }
 
 // copyright 
+
 .copy-right{
     padding: 20px 0px;
     @include flex-row-center(row,center,center);
@@ -770,11 +781,9 @@ footer{
         margin: 0;
         gap: 30px;
     }
- 
-    // .nav-link-footer ul li{
-    //     cursor: pointer
-    // }
+
+    .nav-link-footer ul li{
+        @include hover-animation(0.3s, ease-in, vars.$orange, pointer,true);
+    }
 }
-#test{
-    @include hover-animation(0.3s , ease-in, vars.$orange);
-}
+
