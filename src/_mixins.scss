@@ -119,3 +119,29 @@
 @mixin flex($grow: 0, $shrink: 1, $basis: auto) {
     flex: $grow $shrink $basis;
 }
+
+// text hover animation
+
+@mixin transition-hover($time: 0.3s, $anim: ease-in) {
+    transition: all $time $anim;
+}
+
+@mixin orange-hover($color: vars.$orange) {
+    &:hover {
+        color: $color;
+    }
+}
+@mixin cursor-pointer($pointer:pointer){
+    cursor: $pointer;
+}
+
+@mixin hover-animation($time: 0.3s, $anim: ease-in, $color: vars.$orange, $pointer:pointer) {
+    @include transition-hover($time, $anim);
+    @include orange-hover($color);
+
+    @if $pointer != null{
+        @include cursor-pointer($pointer);
+    }
+
+}
+
