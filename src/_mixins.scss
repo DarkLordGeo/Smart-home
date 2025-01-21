@@ -142,7 +142,6 @@
         @include transition-hover($time, $anim);
         @include orange-hover($color);
     }
-
     @include cursor-pointer($pointer);
 }
 
@@ -154,7 +153,6 @@
     &:hover {
       fill: $hover-fill; 
     }
-
     @include cursor-pointer($pointer);
   }
   

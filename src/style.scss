@@ -95,8 +95,9 @@ nav{
 .under-nav{
     @include align-content-space-between(row,space-between,space-between);
     align-items:center;
-    width: 90vw;
+    max-width: 1200px;
     margin: 0 auto;
+    gap: 150px;
 }
 
 .text-container{
@@ -129,7 +130,9 @@ nav{
 
 .smart-home{
     @include flex-column-center(column,center,center);
-    width: 90vw;
+    justify-content: start;
+    align-items: start;
+    max-width: 1200px;
     margin: 0 auto;
 }
 .smart-home-texts{
@@ -153,10 +156,11 @@ nav{
     @include flex-row-center(row,center,center);
     gap: 17px;
     margin-bottom: 120px;
+    align-items: stretch
 }
 .smart-home-phone-pics{
     @include flex-row-center(row,center,center);
-    gap: 17px;
+    gap: 30px;
     justify-content: space-between;
     margin: 0 auto;
 }
@@ -185,28 +189,33 @@ nav{
 .smart-home-phone{
   @include flex-column-center(column,center,center);
   gap: 17px;
+  flex: 1;
 }
 .smart-home-card{
     @include flex-column-center(column,center,center);
     border-radius: 15px;
     background: vars.$white;
     padding: 20px;
-}
+    width: 100%;
+    height: 100%;
 
+}
 .smart-home-card svg{
     margin:0px !important;
     width: 45px !important;
 }
 .smart-home-card h3{
     margin-bottom: 0px;
-    margin-top: 20px;
+    // margin-top: 20px;
+    font-size: 16px;
+    text-align: center;
 }
 
 // Numbers
 
 .numbers{
-  width: 90vw;
-  margin: 0 auto;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .numbers-header h2{
@@ -252,7 +261,7 @@ nav{
 
 .how-it-works{
     @include flex-column-center(column,center,center);
-    width: 90vw;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -274,18 +283,22 @@ nav{
 
 .how-it-works-cards{
     @include flex-row-center(row,center,center);
-    width: 90vw;
-    justify-content: space-between;
+    max-width: 1200px;
+    // justify-content: stretch;
+    align-items: stretch;
     gap: 30px;
     margin: 0 auto;
     margin-bottom: 120px;
-
 }
+
 .how-it-works-card{
     @include flex-column-center(column,center,center);
     padding:80px 25px;
     background-color: vars.$black2;
     border-radius: 15px;
+    height: auto;
+    flex: 1;
+
 }
 .how-it-works-icon-cont{
     padding: 20px;
@@ -317,7 +330,7 @@ nav{
 
 .unique-solutions{
     @include flex-column-center(column,center,center);
-    max-width: 90vw;
+    max-width: 1200px;
     margin: 0 auto;
     gap: 30px;
 }
@@ -344,10 +357,6 @@ nav{
    color: vars.$white;
 }
 
-.unique-solutions{
-    @include flex-column-center(column,center,center);
-
-}
 .how-it-works-main-card{
     border-radius: 15px;
     width: 100%;
@@ -361,7 +370,19 @@ nav{
 .card-text-column{
     @include flex-column-center(column,center,center);
     align-items: start;
-    padding: 40px;
+    padding: 40px
+}
+.how-it-works-main-card-wrapper  .card-text-column{
+    padding: 80px;
+}
+.how-it-works-else-cards{
+    .how-it-works-card-1{
+        width: 50%;
+        height: auto;
+    }
+    .how-it-works-card-2{
+        width: 50%;
+    }
 }
 .card-text-header h2{
     color: vars.$white;
@@ -370,15 +391,24 @@ nav{
     margin: 0;
 }
 .learn-more{
+    @include align-items-end(center,flex-end,flex-end);
+    width: 50%;
+    justify-content: start;
+
     button{
-        padding: 15px 26px;
         margin-top: 30px;
         background: vars.$orange;
         color: vars.$white;
         border: none;
-        border-radius: 15px;
+        border-radius: 10px;
         font-weight: vars.$font-weight-600;
         font-size: 16px;
+
+        box-sizing: border-box;
+        padding: 20px 23px;
+        background:vars.$orange;
+        font-size: 17px;
+        color: vars.$white;
     }
 }
 
@@ -411,7 +441,8 @@ nav{
 
 .blog{
     @include flex-column-center(column,center,center);
-    max-width: 90vw;
+    // max-width: 90vw;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -428,10 +459,10 @@ nav{
     color: vars.$orange;
     font-weight: vars.$font-weight-600;
     margin-bottom: 10px;
+    max-width: 1200px;
 }
 .blog-text h2{
     margin: 0 auto 40px;
-    max-width: 1000px;
     text-align: center;
     font-size: 35px;
     color: vars.$white;
@@ -440,29 +471,37 @@ nav{
 
 .blog-cards{
    @include flex-row-center(row,center,center);
-   flex-wrap: wrap
-    
+   width: auto;
+   margin: 0 auto;
+   gap: 20px;
+}
+.blog-card{
+    @include flex-column-center(column,center,center);
 }
 
 .blog-card-container{
    @include flex-column-center(column,center,center);
-   border-radius: 15px;
+   border-bottom-left-radius: 15px;
+   border-bottom-right-radius: 15px;
    padding: 35px;
    background: vars.$black2;
-   width: 410px;
-
+   justify-content: start;
+   align-items: start;
+    width: auto;
 }
 .blog-image{
-    // width: 110%;
-    // width: 400px;
-    width: 410px;
-    position: relative;
+
+    // width: 410px;
+    width: 100%;
+    height: 100%;
+    // position: relative;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
 
 }
 .blog-image img{
     width: 400px;
+    height: 243px !important;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
 }
@@ -503,13 +542,16 @@ nav{
   margin-top: 120px;
   margin-bottom: 60px;
   max-width: 1200px;
-//   width: 90vw;
   justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 120px;
+  margin-bottom: 60px;
   margin-left: auto;
   margin-right: auto;
+
 }
 .sponsors-icon svg{
-//   margin: 0;
   height: 75px !important;
   width: 75px !important;
   min-width: 75px !important;
@@ -521,15 +563,16 @@ nav{
 
 footer{
     padding-top: 60px;
-    max-width: 1200px;
+    // max-width: 1200px;
     margin: 0 auto;
+    width: 100%;
     background:vars.$black2;
     @include flex-row-center(row,center,center);
 }
 .footer{
     @include flex-column-center(column,center,center);
     margin: 0 auto; 
-    // min-width: 1200px;
+    max-width: 1200px;
 }
 .help-you-relaxed-container{
     @include flex-row-center(row,center,center);
@@ -537,8 +580,6 @@ footer{
     padding: 45px 55px;
     background: vars.$orange;
     border-radius: 25px;
-    // width: 100%;
-    max-width: 1300px;
     margin-bottom: 100px
 }
 .help-your-relaxed-text{
@@ -558,31 +599,25 @@ footer{
     margin-bottom: 0 !important;
     font-size: 16px;
 }
-.learn-more{
-    @include align-items-end(center,flex-end,flex-end);
-    width: 50%;
 
-}
-.learn-more button{
-    box-sizing: border-box;
-    padding: 15px 25px;
-    background-color: #000;
-    font-size: 17px;
-    color: vars.$white;
-}
+
 // nav-links
 
 .nav-links{
     @include flex-row-center(row,center,center);
     gap: 60px;
+    align-items: start;
     justify-content: space-between;
     margin-bottom: 80px;
+    width: 100%;
+    // width: 90vw;
 }
 
 .smart-home-nav-link{
     @include flex-column-center(column,center,center);
     align-items: start;
     justify-content: space-between;
+    width: calc(25% - 40px);
 }
 .smart-home-logo{
     @include flex-row-center(row,center,center);
@@ -634,15 +669,23 @@ footer{
     margin: 0;
     padding: 0;
     @include flex-column-center(column,center,center);
+
+    @include hover-animation(0.1s, ease-in, vars.$orange, pointer);
+    @include svg-fill-hover(vars.$white, vars.$orange);
+
     justify-content: start;
     align-items: start;
     gap: 15px ;
 }
 
+// ! #EC8E58 
+// ? selection color
+
+
 .get-in-touch-infos ul li{
     list-style-type: none;
-    @include flex-row-center(row,center,center);
 
+    @include flex-row-center(row,center,center);
     
     column-gap: 15px;
     align-items:start;
