@@ -21,24 +21,57 @@ body{
 main{
     @include flex-column-center(column,center,center);
     // background-color: rgba(255, 0, 0, 0.323);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    // background-image: url(assets/asset13.webp);
-    background-image: url(https://startersites.io/blocksy/smart-home/wp-content/uploads/2024/06/home-hero-section-image.webp);
+
     margin-bottom: 80px;
     padding-top: 250px;
     gap: 50px;
+    
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-image: url(https://startersites.io/blocksy/smart-home/wp-content/uploads/2024/06/home-hero-section-image.webp);
+
 }
+
 
 
 // Navigation top
 
 nav{
   @include  align-content-space-between(row,space-between,space-between);
-//   width:100%;
-   width: 90vw;
+   max-width: 1100px;
    margin: 0 auto;
+   height: 100px;
+   position: absolute;
+   top: 50px;
+   left: 50%;
+   transform:translate(-50%,-50%);
+   gap: 100px ;
+}
+
+nav.slide-down{
+
+    position: fixed;
+    width: 100%;
+    animation: slidedown .4s forwards;
+
+    gap: 100px;
+    height: 100px;
+    margin-top: 45px;
+    transform: translate(-50%,-50%);
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 1000; 
+
+}
+@keyframes slidedown {
+    from{
+        top: -150px;
+    }
+    to{
+        top: 0;
+    }
+
 }
 
 // Logo container
@@ -46,10 +79,17 @@ nav{
     width: auto;
     height: auto;
     padding: 5px;
+    @include flex-row-center(row,center,center);
 }
 
 
+
+
 // Mid navigation 
+.nav-container{
+    @include flex-row-center(row,center,center);
+
+}
 .nav-container ul{
     list-style: none;
     padding:0;
@@ -67,7 +107,12 @@ nav{
 // Side buttons
 
 .switch{
-  color: vars.$white
+  color: vars.$white;
+  margin-right: 20px;
+}
+.switch svg{
+    width: 20px;
+    height: 20px
 }
 .side-buttons-container{
     @include flex-row-center(row,center,center);
@@ -78,7 +123,7 @@ nav{
     @include align-items-center(row,center,center);
     color: vars.$white;
     gap:5px;
-    padding: 5px 20px;
+    padding: 10px 20px;
     background: vars.$orange;
     border-radius: 10px;
     font-size: 16px;
@@ -87,7 +132,7 @@ nav{
 }
 .download-icon{
     @include flex-row-center(row,center,center);
-    color: vars.$white;
+    fill:vars.$white;
 }
 
 // under nav
@@ -98,6 +143,18 @@ nav{
     max-width: 1200px;
     margin: 0 auto;
     gap: 150px;
+
+
+
+
+
+    // background-size: cover;
+    // background-repeat: no-repeat;
+    // background-position: 50% 50%;
+    // background-image: url(https://startersites.io/blocksy/smart-home/wp-content/uploads/2024/06/home-hero-section-image.webp);
+    
+
+
 }
 
 .text-container{
@@ -216,6 +273,7 @@ nav{
 .numbers{
     max-width: 1200px;
     margin: 0 auto;
+    // @include flex-row-center(row,center,center)
 }
 
 .numbers-header h2{
@@ -245,12 +303,14 @@ nav{
 .number-amount{
     @include flex-column-center(column,center,center);
     align-items: start;
+    font-weight: vars.$font-weight-600;
 }
 
 .number{
     color: vars.$white;
     font-size: 30px;
     margin-bottom: 10px;
+    @include flex-row-center(row,center,center);
 }
 .number-text{
     color: vars.$gray2;
