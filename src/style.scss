@@ -51,11 +51,9 @@ nav{
 }
 
 nav.slide-down{
-
     position: fixed;
-    width: 100%;
+    width: 100% !important;
     animation: slidedown .4s forwards;
-
     gap: 100px;
     height: 100px;
     margin-top: 45px;
@@ -90,30 +88,43 @@ nav.slide-down{
     @include flex-row-center(row,center,center);
 
 }
-.nav-container ul{
-    list-style: none;
-    padding:0;
+
+
+// @include hover-animation(0.1s, ease-in, vars.$orange, pointer);
+    
+// @include svg-fill-hover(vars.$white, vars.$orange);
+.nav-container{
+    ul{
+        list-style: none;
+        padding:0;
+        @include flex-row-center(row,center,center);
+        font-size: 16px;
+        color: vars.$white;
+        font-weight: vars.$font-weight-600
+    }
+    ul{
+        li{
+            padding: 0px 30px;
+            @include svg-fill-hover(vars.$white, vars.$orange);
+            @include hover-animation(0.1s, ease-in, vars.$orange, pointer);
+        }
+    }
 }
-.nav-container ul{
-    @include flex-row-center(row,center,center);
-    font-size: 16px;
-    color: vars.$white;
-    font-weight: vars.$font-weight-600
-}
-.nav-container ul li{
-    padding: 0px 30px
-}
+
 
 // Side buttons
 
 .switch{
   color: vars.$white;
   margin-right: 20px;
-}
-.switch svg{
+  @include svg-fill-hover(vars.$white, vars.$orange);
+  @include hover-animation(0.1s, ease-in, vars.$orange, pointer);
+  svg{
     width: 20px;
     height: 20px
+    }
 }
+
 .side-buttons-container{
     @include flex-row-center(row,center,center);
 
@@ -127,8 +138,9 @@ nav.slide-down{
     background: vars.$orange;
     border-radius: 10px;
     font-size: 16px;
-    font-weight: vars.$font-weight-600
-    // font-weight: 600;
+    font-weight: vars.$font-weight-600;
+    @include  hover-background-orange(0.1s,ease-in,vars.$hover-orange,pointer);
+
 }
 .download-icon{
     @include flex-row-center(row,center,center);
@@ -211,21 +223,23 @@ nav.slide-down{
 
 .smart-home-pictures{
     @include flex-row-center(row,center,center);
-    gap: 17px;
+    gap: 20px;
     margin-bottom: 120px;
-    align-items: stretch
-}
-.smart-home-phone-pics{
-    @include flex-row-center(row,center,center);
-    gap: 30px;
+    align-items: stretch;
     justify-content: space-between;
-    margin: 0 auto;
 }
+// .smart-home-phone-pics{
+//     @include flex-row-center(row,center,center);
+//     gap: 30px;
+//     justify-content: space-between;
+//     margin: 0 auto;
+// }
 .phone-card{
     border-radius: 15px;
     background: vars.$white;
     width: 307px;
     height: 456px;
+    flex: 1;
 }
 .phone-card:nth-child(2) img{
     border-radius: 15px;
@@ -255,15 +269,27 @@ nav.slide-down{
     padding: 20px;
     width: 100%;
     height: 100%;
-
+    cursor: pointer;
+    transition: background-color 0.3s ease, fill 0.3s ease,color 0.5s ease;
+    &:hover{
+        background: vars.$orange;
+        svg{
+            fill: vars.$white;
+        }
+        h3{
+            color: vars.$white;
+        }
+    }
 }
+// .smart-home-card:hover{
+//     background: vars.$orange;
+// }
 .smart-home-card svg{
     margin:0px !important;
     width: 45px !important;
 }
 .smart-home-card h3{
     margin-bottom: 0px;
-    // margin-top: 20px;
     font-size: 16px;
     text-align: center;
 }
@@ -273,7 +299,6 @@ nav.slide-down{
 .numbers{
     max-width: 1200px;
     margin: 0 auto;
-    // @include flex-row-center(row,center,center)
 }
 
 .numbers-header h2{
@@ -344,11 +369,11 @@ nav.slide-down{
 .how-it-works-cards{
     @include flex-row-center(row,center,center);
     max-width: 1200px;
-    // justify-content: stretch;
     align-items: stretch;
     gap: 30px;
     margin: 0 auto;
     margin-bottom: 120px;
+    position: relative;
 }
 
 .how-it-works-card{
@@ -358,8 +383,19 @@ nav.slide-down{
     border-radius: 15px;
     height: auto;
     flex: 1;
-
+    // margin-top: -25px;
+    transition: background-color 0.3s ease ,box-shadow 0.3s ease , margin-top 0.3s ease, transform 0.3s ease;
 }
+.how-it-works-card:hover{
+    background-color: vars.$orange;
+    box-shadow: 0 40px 140px -10px #e074367d;
+    transform: translateY(-10px);
+    // margin-top: -25px;
+}
+.how-it-works-card:hover .how-it-works-description{
+    color: vars.$white;
+}
+
 .how-it-works-icon-cont{
     padding: 20px;
     border-radius: 50%;
@@ -385,6 +421,7 @@ nav.slide-down{
     text-align: center !important;
     color: vars.$gray2;
 }
+
 
 // unique-solutions
 
@@ -443,17 +480,19 @@ nav.slide-down{
     .how-it-works-card-2{
         width: 50%;
     }
+
 }
+
 .card-text-header h2{
     color: vars.$white;
     max-width: 650px;
     font-size: 25px;
     margin: 0;
 }
+// !
 .learn-more{
-    @include align-items-end(center,flex-end,flex-end);
+    @include align-items-start(row,flex-start,flex-start);
     width: 50%;
-    justify-content: start;
 
     button{
         margin-top: 30px;
@@ -466,9 +505,14 @@ nav.slide-down{
 
         box-sizing: border-box;
         padding: 20px 23px;
-        background:vars.$orange;
+        background-color: vars.$black;
         font-size: 17px;
         color: vars.$white;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+    }
+    button:hover{
+        background-color: vars.$hover-black; 
     }
 }
 
@@ -488,16 +532,57 @@ nav.slide-down{
 .how-it-works-card-container{
     padding: 30px;
 }
-.how-it-works-card-2{
+
+.how-it-works-card-2 {
     background-image: url(https://startersites.io/blocksy/smart-home/wp-content/uploads/2023/12/home-solutions-section-image-3.webp);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 15px;
-    height: 100%;
+    height: 300px;
+    overflow: hidden;
+    transition: background-size 0.6s ease;
+    cursor: pointer;
+    will-change: background-size; 
+    
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-image: var(--image-url); 
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    &:hover::before {
+        transform: scale(1.2);
+    }
 }
 
-// Blogs
+// .how-it-works-card-2:hover {
+//     background-size: 110%;
+// }
+
+
+// .how-it-works-card-2{
+//     background-image: url(https://startersites.io/blocksy/smart-home/wp-content/uploads/2023/12/home-solutions-section-image-3.webp);
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     background-size: cover;
+//     border-radius: 15px;
+//     height: 100%;
+//     transition: background-size 0.3s ease;
+//     cursor: pointer;
+//     overflow: hidden;
+// }
+// .how-it-works-card-2:hover{
+//     background-size: 110%;
+// }
+
+// // Blogs
 
 .blog{
     @include flex-column-center(column,center,center);
@@ -537,6 +622,7 @@ nav.slide-down{
 }
 .blog-card{
     @include flex-column-center(column,center,center);
+    // max-width: 410px;
 }
 
 .blog-card-container{
@@ -549,22 +635,158 @@ nav.slide-down{
    align-items: start;
     width: auto;
 }
+// .blog-card-image-container:nth-child(1){
+//     width: 100%;
+//     height: 240px;
+//     border-top-left-radius: 15px;
+//     border-top-right-radius: 15px;
+
+//     background-position: center;
+//     background-size: cover;
+//     background-repeat: no-repeat;
+
+//     cursor: pointer;
+
+//     transition: background-size 0.3s ease-in-out;
+//     background-image: url("https://startersites.io/blocksy/smart-home/wp-content/uploads/2023/12/article-thumb-6-768x461.webp");
+// }
+// .blog-card-image-container:first-of-type:hover {
+//     background-size: 140%;
+// }
+
+
+// .blog-card-image-container{
+//     &:nth-child(1){
+//         @include blog-card-bg("https://startersites.io/blocksy/smart-home/wp-content/uploads/2023/12/article-thumb-7-1024x614.webp")
+//     }
+//     &:nth-child(2){
+//         @include blog-card-bg("https://startersites.io/blocksy/smart-home/wp-content/uploads/2023/12/article-thumb-6-768x461.webp")
+//     }
+//     &:nth-child(3){
+//         @include blog-card-bg("https://startersites.io/blocksy/smart-home/wp-content/uploads/2023/12/article-thumb-5-768x461.webp")
+//     }
+// }
+// .blog-card-container:nth-child(1){
+//     @include blog-card-bg("https://startersites.io/blocksy/smart-home/wp-content/uploads/2023/12/article-thumb-7-1024x614.webp")
+// }
+// .blog-card-container:nth-child(2){
+//      @include blog-card-bg("https://startersites.io/blocksy/smart-home/wp-content/uploads/2023/12/article-thumb-6-768x461.webp")
+
+// }
+// .blog-card-image-container {
+//     &:nth-child(1) {
+//         @include blog-card-bg("https://startersites.io/blocksy/smart-home/wp-content/uploads/2023/12/article-thumb-6-768x461.webp");
+//     }
+
+//     &:nth-child(2) {
+//         @include blog-card-bg("https://startersites.io/blocksy/smart-home/wp-content/uploads/2023/12/article-thumb-7-1024x614.webp");
+//     }
+
+//     &:nth-child(3) {
+//         @include blog-card-bg("https://example.com/image3.webp");
+//     }
+// }
+
+
+.blog-card-image-container {
+   
+
+    &:nth-child(1) {
+        --image-url: url("https://startersites.io/blocksy/smart-home/wp-content/uploads/2023/12/article-thumb-6-768x461.webp");
+    }
+
+    &:nth-child(2) {
+        --image-url: url("https://startersites.io/blocksy/smart-home/wp-content/uploads/2023/12/article-thumb-7-1024x614.webp");
+    }
+
+    &:nth-child(3) {
+        --image-url: url("https://startersites.io/blocksy/smart-home/wp-content/uploads/2023/12/article-thumb-5-1024x614.webp");
+    }
+
+    width: 100%;
+    height: 240px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: var(--image-url); 
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    &:hover::before {
+        transform: scale(1.2);
+    }
+}
+
+
+
+// .blog-card-image-container {
+//     width: 100%;
+//     height: 240px;
+//     border-top-left-radius: 15px;
+//     border-top-right-radius: 15px;
+//     overflow: hidden;
+//     cursor: pointer;
+//     position: relative;
+// }
+
+// .blog-card-image-container:first-of-type::before {
+//     content: "";
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     background-image: url("https://startersites.io/blocksy/smart-home/wp-content/uploads/2023/12/article-thumb-6-768x461.webp");
+//     background-position: center;
+//     background-size: cover;
+//     background-repeat: no-repeat;
+//     transition: transform 0.3s ease-in-out;
+// }
+
+// .blog-card-image-container:first-of-type:hover::before {
+//     transform: scale(1.1); 
+// }
+
+
+
+
+
+
+
+
 .blog-image{
 
-    // width: 410px;
-    width: 100%;
-    height: 100%;
-    // position: relative;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+    // width: 100%;
+    // height: 100%;
 
-}
-.blog-image img{
-    width: 400px;
-    height: 243px !important;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
+    img{
+        width: 400px;
+        cursor: pointer;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        transform: scale(1);
+        transition: transform 0.4s ease-in; 
+    }
+    img:hover{
+        transform: scale(1.1);
+    }
 }
+
 .blog-date ul{
     list-style-type: none;
     display: flex;
@@ -590,6 +812,7 @@ nav.slide-down{
     border-radius: 12px;
     font-weight: vars.$font-weight-600;
     font-size: 15px;
+    @include  hover-background-orange(0.2s,ease-in,vars.$hover-orange,pointer);
 }
 
 //     margin-top: 120px;
@@ -647,6 +870,31 @@ footer{
     justify-content: start;
     align-items: start;
     width: 50%;
+}
+.learn-more-relaxed{
+    @include align-items-end(row,flex-end,flex-end);
+    width: 50%;
+
+    button{
+        margin-top: 30px;
+        background: vars.$orange;
+        color: vars.$white;
+        border: none;
+        border-radius: 10px;
+        font-weight: vars.$font-weight-600;
+        font-size: 16px;
+
+        box-sizing: border-box;
+        padding: 20px 23px;
+        background-color: vars.$black;
+        font-size: 17px;
+        color: vars.$white;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+    }
+    button:hover{
+        background-color: vars.$hover-black; 
+    }
 }
 .help-you-relaxed-header h2{
     margin: 0px 0px 10px;
@@ -731,6 +979,7 @@ footer{
     @include flex-column-center(column,center,center);
 
     @include hover-animation(0.1s, ease-in, vars.$orange, pointer);
+
     @include svg-fill-hover(vars.$white, vars.$orange);
 
     justify-content: start;
@@ -842,10 +1091,11 @@ footer{
         padding: 10px 23px;
         font-size: 16px;
         color: vars.$white;
-        border-radius: 15px;
+        border-radius: 10px;
         border: none;
         background: vars.$orange;
         font-weight: vars.$font-weight-600;
+        @include  hover-background-orange(0.1s,ease-in,vars.$hover-orange,pointer);
     }
 }
 
