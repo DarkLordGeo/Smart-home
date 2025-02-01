@@ -193,16 +193,13 @@
         transform: scale(1.1);
     }
 }
-.blog-card-image-container {
-    &:nth-child(1) {
-        @include blog-card-bg("https://startersites.io/blocksy/smart-home/wp-content/uploads/2023/12/article-thumb-6-768x461.webp");
-    }
+// .blog-card-image-container {
+//     &:nth-child(1) {
+//         @include blog-card-bg("https://startersites.io/blocksy/smart-home/wp-content/uploads/2023/12/article-thumb-6-768x461.webp");
+//     }
 
-    &:nth-child(2) {
-        @include blog-card-bg("https://startersites.io/blocksy/smart-home/wp-content/uploads/2023/12/article-thumb-7-1024x614.webp");
-    }
+//     &:nth-child(2) {
+//         @include blog-card-bg("https://startersites.io/blocksy/smart-home/wp-content/uploads/2023/12/article-thumb-7-1024x614.webp");
+//     }
 
-    &:nth-child(3) {
-        @include blog-card-bg("https://example.com/image3.webp");
-    }
-}
+// }

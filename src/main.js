@@ -41,73 +41,45 @@ import './style.scss'
 
 
 
-window.addEventListener("load", () => {
-    let loadAnimation = document.querySelectorAll(".number-digit");
-    let loadAnimationParent = document.querySelector(".numbers-row");
-    let interval = 100;
+// window.addEventListener("load", () => {
+//     let loadAnimation = document.querySelectorAll(".number-digit");
+//     let loadAnimationParent = document.querySelector(".numbers-row");
+//     let interval = 1;
 
-    function checkInView() {
-        let rect = loadAnimationParent.getBoundingClientRect();
+//     function checkInView() {
+//         let rect = loadAnimationParent.getBoundingClientRect();
 
-        if (rect.top >= 0 && rect.top <= window.innerHeight) {
-            // console.log(window.innerHeight);
-            loadAnimation.forEach((loadAnimation) => {
-                let startValue = 0;
-                let endvalue = parseInt(loadAnimation.getAttribute("data-val"));
-                let duration = Math.floor((interval / endvalue));
+//         if (rect.top >= 0 && rect.top <= window.innerHeight) {
+//             loadAnimation.forEach((loadAnimation) => {
+//                 let startValue = 0;
+//                 let endvalue = parseInt(loadAnimation.getAttribute("data-val"));
+//                 let duration = Math.floor((interval / endvalue, 1));
 
-                let counter = setInterval(() => {
-                    startValue += 1;
-                    loadAnimation.textContent = startValue;
-                    if (startValue === endvalue) {
-                        clearInterval(counter);
-                    }
-                }, duration);
-            });
-        }
-    }
-
-    checkInView();
-
-    window.addEventListener("scroll", checkInView);
-});
-
-
-
-
-// window.addEventListener("scroll", () =>{
-
-//     function triggerScroll(){
-//         let navbar = document.getElementsByTagName("nav")[0]
-//         navbar.style.position = "absolute"
-//         let navbarStyles = `
-//             background:red;
-//             position:sticky;
-//             top:0px;
-//         `
-//         let navrect = navbar.getBoundingClientRect();
-//         console.log(navrect);
-//         if(navrect => 0 && navrect.top <= window.innerHeight){
-//             navbar.style.cssText = navbarStyles
+//                 let counter = setInterval(() => {
+//                     startValue += 1;
+//                     loadAnimation.textContent = startValue;
+//                     if (startValue === endvalue) {
+//                         clearInterval(counter);
+//                     }
+//                 }, duration);
+//             });
 //         }
 //     }
-//     triggerScroll()
-// })
 
+//     checkInView();
 
-
-// window.addEventListener("scroll", () => {
-//     let navbar = document.getElementsByTagName("nav")[0]
-
-//     if (window.scrollY > 50) {
-//         navbar.classList.add("scrolled");
-//     } else {
-//         navbar.classList.remove("scrolled"); 
-//     }
+//     window.addEventListener("scroll", checkInView);
 // });
 
 
+
+
+
     let navbar = document.getElementsByTagName("nav")[0]
+
+    // let navbarWrapper = document.querySelector(".nav-wrapper")
+
+    // let navbarWrapperRect = navbarWrapper.getBoundingClientRect();
 
     let rect = navbar.getBoundingClientRect()
 
@@ -121,24 +93,4 @@ window.addEventListener("load", () => {
 
 
 
-// loadAnimation.forEach((loadAnimation) => {
-//     let startValue = 0
-
-//     let endvalue = parseInt(loadAnimation.getAttribute("data-val"))
-    
-//     let duration = Math.floor((interval/endvalue))
-
-//     let counter = setInterval(() => {
-//         startValue += 1
-//         loadAnimation.textContent = startValue
-//         if(startValue === endvalue){
-//             clearInterval(counter)
-//         }
-//     }, duration);
-
-// })
-
-
-
-
-
+ 
