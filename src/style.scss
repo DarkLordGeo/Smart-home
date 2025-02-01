@@ -1393,6 +1393,23 @@ footer{
         display: flex;
         align-content: center;
         justify-items: center;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .how-it-works-main-card-wrapper{
+        .card-text-column{
+            padding: 30px;
+            justify-content: center;
+            align-items: center;
+        }
+        .card-text-header{
+            h2{
+                text-align: center;
+            }
+        }
+        .learn-more{
+            justify-content: center;
+        }
     }
     .how-it-works-else-cards{
         flex-direction: column;
@@ -1409,7 +1426,8 @@ footer{
         border-radius: 15px;
     }
     .how-it-works-card-container{
-        align-content:center;
+        // align-content:center;
+        // justify-content: center;
     }
 
     // blog-texts
@@ -1458,5 +1476,8 @@ footer{
     }
     .newsettler{
         @include flex-column-center(column,center,center);
+    }
+    .nav-link-footer{
+        display: none;
     }
 }
