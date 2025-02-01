@@ -1327,5 +1327,136 @@ footer{
     }
 }
 @media (max-width:690px){
-    
+    .under-nav{
+        @include flex-column-center(column,center,center);
+    }
+    // smart-home-texts
+    .smart-home-texts{
+        text-align: center;
+    }
+    .text-container{
+        text-align: center;
+    }
+    .header-text{
+        h2{
+        font-size: 25px;
+        }
+    }
+    // phne-card-container-parent
+    .phone-card-conatiner-parent{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-column-gap: 30px;
+        grid-row-gap: 30px;
+    }
+    .smart-home-phone{
+        gap: 25px;
+        height: auto;
+
+    }
+    .smart-home-pictures{
+        margin-bottom: 80px;
+    }
+    // numbers-header
+    .numbers-header{
+        h2{
+            font-size: 25px;
+        }
+    }
+    .numbers-row{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-column-gap: 30px;
+        grid-row-gap: 50px;
+    }
+    // how-it-works-text
+    .how-it-works-text{
+        h2{
+            font-size: 25px;
+        }
+    }
+    .how-it-works-cards{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows:1fr;
+        grid-row-gap: 30px;
+    }
+
+    // unique-solutions-texts
+    .unique-solutions-texts{
+        align-items: center;
+    }
+
+    .card-text-column{
+        display: flex;
+        align-content: center;
+        justify-items: center;
+    }
+    .how-it-works-else-cards{
+        flex-direction: column;
+    }
+    .how-it-works-card-1{
+        width: 100% !important;
+
+    }
+    .how-it-works-card-2{
+        width: 100% !important;
+    }
+    .card-text-column{
+        width: 100%;
+        border-radius: 15px;
+    }
+    .how-it-works-card-container{
+        align-content:center;
+    }
+
+    // blog-texts
+
+    .blog-texts{
+        align-items: center;
+    }
+    .blog-cards{
+        @include flex-column-center(column,center,center);
+    }
+    .blog-card-container{
+        @include flex-column-center(column,center,center);
+    }
+    .blog-date{
+        margin-bottom: 15px ;
+    }
+    // sponsors-parent-container
+    .sponsors-parent-container{
+        flex-wrap: wrap;
+    }
+
+    // learn-more-relaxed
+    .learn-more-relaxed{
+        width: 100%;
+    }
+
+    // nav-links
+    .nav-links{
+        @include flex-column-center(column,center,center);
+    }
+    .smart-home-nav-link{
+        @include flex-column-center(column,center,center);
+    }
+    .get-in-touch{
+        @include flex-column-center(column,center,center);
+        ul{
+        @include flex-column-center(column,center,center);
+
+        }
+    }
+
+    .usefull-links-info{
+        ul{
+        @include flex-column-center(column,center,center);
+        }
+    }
+    .newsettler{
+        @include flex-column-center(column,center,center);
+    }
 }
