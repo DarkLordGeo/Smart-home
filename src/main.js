@@ -41,35 +41,35 @@ import './style.scss'
 
 
 
-// window.addEventListener("load", () => {
-//     let loadAnimation = document.querySelectorAll(".number-digit");
-//     let loadAnimationParent = document.querySelector(".numbers-row");
-//     let interval = 1;
+window.addEventListener("load", () => {
+    let loadAnimation = document.querySelectorAll(".number-digit");
+    let loadAnimationParent = document.querySelector(".numbers-row");
+    let interval = 1;
 
-//     function checkInView() {
-//         let rect = loadAnimationParent.getBoundingClientRect();
+    function checkInView() {
+        let rect = loadAnimationParent.getBoundingClientRect();
 
-//         if (rect.top >= 0 && rect.top <= window.innerHeight) {
-//             loadAnimation.forEach((loadAnimation) => {
-//                 let startValue = 0;
-//                 let endvalue = parseInt(loadAnimation.getAttribute("data-val"));
-//                 let duration = Math.floor((interval / endvalue, 1));
+        if (rect.top >= 0 && rect.top <= window.innerHeight) {
+            loadAnimation.forEach((loadAnimation) => {
+                let startValue = 0;
+                let endvalue = parseInt(loadAnimation.getAttribute("data-val"));
+                let duration = Math.floor((interval / endvalue, 1));
 
-//                 let counter = setInterval(() => {
-//                     startValue += 1;
-//                     loadAnimation.textContent = startValue;
-//                     if (startValue === endvalue) {
-//                         clearInterval(counter);
-//                     }
-//                 }, duration);
-//             });
-//         }
-//     }
+                let counter = setInterval(() => {
+                    startValue += 1;
+                    loadAnimation.textContent = startValue;
+                    if (startValue === endvalue) {
+                        clearInterval(counter);
+                    }
+                }, duration);
+            });
+        }
+    }
 
-//     checkInView();
+    checkInView();
 
-//     window.addEventListener("scroll", checkInView);
-// });
+    window.addEventListener("scroll", checkInView);
+});
 
 
 
@@ -91,6 +91,24 @@ import './style.scss'
         ]
     })
 
+let burgerOverlay = document.querySelector(".burger-overlay")
+let burgerMenu =  document.querySelector(".burger-menu-container")
+let closeButton = document.querySelector(".close-button")
 
 
- 
+
+// function showNavigation(){
+//     closeButton.style.display = "block"
+
+//     closeButton.classList.toggle(".burger-block")
+// }
+
+burgerMenu.addEventListener("click", () =>{
+    closeButton.style.display = "block"
+
+    closeButton.classList.toggle(".burger-block")
+})
+
+closeButton.addEventListener("click", () =>{
+    burgerOverlay.style.display = "none"
+})

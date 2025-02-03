@@ -55,36 +55,44 @@ main{
 //     background-color: rgba(0, 0, 0, 0.85);
 //     z-index: 1000; 
 // }
-
+.nav-wrapper{
+    gap: 0px    
+}
 
 nav{
   @include  align-content-space-between(row,space-between,space-between);
-//    max-width: 1200px;
-    width: 100%;
+   width: 100%;  
+   justify-content: space-evenly;
    margin: 0 auto;
    height: 100px;
    position: absolute;
    top: 50px;
    left: 50%;
    transform:translate(-50%,-50%);
-   gap: 140px;
-   display: none;
+   gap: 0px ;
 }
 
+
 nav.slide-down{
-    // width: 200vw;
     position: fixed;
     animation: slidedown .4s forwards;
-    gap: 100px;
+    // gap: 100px;
     height: 100px;
     margin-top: 45px;
     transform: translate(-50%,-50%);
     background-color: rgba(0, 0, 0, 0.85);
     z-index: 1000; 
 }
+.slide-down{
+    gap: 0px;
+}
 
-
-
+.burger-menu{
+    display: none;
+}
+.close-button{
+    display: none;
+}
 
 
 
@@ -201,17 +209,17 @@ nav.slide-down{
     color: vars.$white;
     margin: 0;
 }
-.iphone-container{
-    // width: 50%;
-    // height: 100%;
-}
+// .iphone-container{
+//     // width: 50%;
+//     // height: 100%;
+// }
 .iphone-container img{
     // width: 672px;
     // height: 989px;
     vertical-align: top;
     display: inline-block;
     box-sizing: border-box;
-    max-width: 100%;
+    max-width: 90%;
     height: auto;
 }
 
@@ -1177,16 +1185,88 @@ footer{
 
 // 1000px responsive
 @media (max-width:1000px){
+    main{
+        padding-top: 150px;
+    }
+    .burger-menu{
+        display: block;
+        fill: vars.$white;
+        width: 20px;
+        height: 20px;
+    }
+    .close-button{
+        fill: vars.$white;        
+        width: 12px;
+        display: block;
+    }
+    nav{
+        justify-content: space-evenly;
+        height: 70px;
+        top: 35px;
+    }
+    nav.slide-down{
+        height: 70px;
+        margin-top: 30px;
+    }
+    .nav-container{
+        display: none;
+    }
+    .download{
+        display: none;
+    }
 
-    .iphone-container{
+    .logo-container{
+        width: 40%;
+        justify-content: start;
         img{
-            max-width: 100%;
-            height: auto;
+            width: 123px;
+        }
+    }
+
+    .side-buttons-container{
+        width: 40%;
+        justify-content: end;
+
+    }
+    // hamburger menu
+    .burger-overlay{
+        width: 100%;
+        height:100%;
+        z-index: 100000;
+        position: fixed;
+        background-color: rgba(0, 0, 0, 0.928);
+        transition: block;
+        animation: appear 0.3s ease;
+        display: none
+    }
+
+    // .burger-overlay.burger-block{
+    //     display: block
+    // }
+
+    .close-button-container{
+        @include flex-row-center(row,center,center);
+        width: 100%;
+        padding-top: 20px;
+        p{
+            color: vars.$white;
+        }
+    }
+    @keyframes appear {
+        0%{
+            background-color: rgba(0, 0, 0, 0.928);
+        }
+    }
+    .iphone-container{
+        @include flex-row-center(row,center,center);
+        justify-content: center;
+        img{
+            max-width: 90%;
         }
     }
     .under-nav{
-        align-items: end;    
-        gap: 50px;
+        align-items: end; 
+        gap: 0px;  
     }
     
     .text-container{
@@ -1249,10 +1329,14 @@ footer{
     .numbers-conatiner-parent{
         margin-bottom: 80px;
     }
-
     // how-it-works-cards
     .how-it-works-parent-container{
         margin-bottom: 80px;
+    }
+    .card-text-column{
+        .how-it-works-card-container{
+            padding: 0px !important;
+        }
     }
     .how-it-works-cards{
         display: grid;
@@ -1266,9 +1350,17 @@ footer{
             font-size: 30px;
         }
     }
-
     .how-it-works-else-cards{
         margin-bottom: 80px;
+    }
+    .card-text-column{
+        background-size: cover;
+    }
+    .how-it-works-card-1{
+        background-size: cover;
+    }
+    .how-it-works-card-2{
+        background-size: cover;
     }
     // blog-cards
     .blog-cards{
@@ -1278,7 +1370,6 @@ footer{
         grid-column-gap: 30px;
         grid-row-gap: 30px;
     }
-
     // sponsors
     .sponsors{
         margin-top: 80px;
@@ -1288,14 +1379,12 @@ footer{
     .help-you-relaxed-container{
         flex-direction: column;
         @include flex-column-center(column,center,center);
-
     }
     .help-your-relaxed-text{
         width: 100%;
         @include flex-column-center(column,center,center);
         text-align: center;
         margin-bottom:35px;
-
     }
     .help-you-relaxed-description{
         text-align: center;
@@ -1308,7 +1397,6 @@ footer{
             margin-top: 0px;
         }
     }
-
     // nav-links
     .nav-links{
         display: grid;
@@ -1320,12 +1408,13 @@ footer{
     .smart-home-nav-link{
         width: 100%;
     }
-
     .copy-right{
         @include flex-column-center(column,center,center);
-
     }
 }
+
+// 690px responsive
+
 @media (max-width:690px){
     .under-nav{
         @include flex-column-center(column,center,center);
@@ -1383,12 +1472,10 @@ footer{
         grid-template-rows:1fr;
         grid-row-gap: 30px;
     }
-
     // unique-solutions-texts
     .unique-solutions-texts{
         align-items: center;
     }
-
     .card-text-column{
         display: flex;
         align-content: center;
@@ -1425,10 +1512,10 @@ footer{
         width: 100%;
         border-radius: 15px;
     }
-    .how-it-works-card-container{
-        // align-content:center;
-        // justify-content: center;
-    }
+    // .how-it-works-card-container{
+    //     // align-content:center;
+    //     // justify-content: center;
+    // }
 
     // blog-texts
 
