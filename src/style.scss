@@ -1198,6 +1198,8 @@ footer{
         fill: vars.$white;        
         width: 12px;
         display: block;
+        // display: none;
+        // display: block;
     }
     nav{
         justify-content: space-evenly;
@@ -1230,14 +1232,21 @@ footer{
     }
     // hamburger menu
     .burger-overlay{
+        @include flex-column-center(column,center,center);
         width: 100%;
         height:100%;
         z-index: 100000;
         position: fixed;
         background-color: rgba(0, 0, 0, 0.928);
-        transition: block;
-        animation: appear 0.3s ease;
-        display: none
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+
+    }
+    .burger-overlay.active {
+        opacity: 1;
+        visibility: visible;
     }
 
     // .burger-overlay.burger-block{
@@ -1246,17 +1255,22 @@ footer{
 
     .close-button-container{
         @include flex-row-center(row,center,center);
+        justify-content: end;
         width: 100%;
-        padding-top: 20px;
+        padding-top: 30px;
+        padding-left: 50px;
+        padding-right: 55px;
         p{
             color: vars.$white;
         }
     }
-    @keyframes appear {
-        0%{
-            background-color: rgba(0, 0, 0, 0.928);
-        }
+    .panel-container{
+        padding: 30px;
+        width:100%;
+        @include flex-column-center(column,center,center);
     }
+
+
     .iphone-container{
         @include flex-row-center(row,center,center);
         justify-content: center;

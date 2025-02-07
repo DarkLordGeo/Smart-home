@@ -91,24 +91,26 @@ window.addEventListener("load", () => {
         ]
     })
 
+
 let burgerOverlay = document.querySelector(".burger-overlay")
-let burgerMenu =  document.querySelector(".burger-menu-container")
-let closeButton = document.querySelector(".close-button")
+
+let openOverlay = document.querySelector(".burger-menu")
+
+let closeOverlay = document.querySelector(".close-button")
 
 
 
-// function showNavigation(){
-//     closeButton.style.display = "block"
-
-//     closeButton.classList.toggle(".burger-block")
-// }
-
-burgerMenu.addEventListener("click", () =>{
-    closeButton.style.display = "block"
-
-    closeButton.classList.toggle(".burger-block")
+openOverlay.addEventListener("click", () =>{
+    burgerOverlay.style.display = "block"
+    burgerOverlay.classList.add("active")
 })
 
-closeButton.addEventListener("click", () =>{
+
+closeOverlay.addEventListener("click", () =>{
     burgerOverlay.style.display = "none"
+    burgerOverlay.classList.remove("active")
+
 })
+
+
+
