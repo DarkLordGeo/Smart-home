@@ -103,14 +103,65 @@ let closeOverlay = document.querySelector(".close-button")
 openOverlay.addEventListener("click", () =>{
     burgerOverlay.style.display = "block"
     burgerOverlay.classList.add("active")
+    document.body.style.overflow = "hidden"
 })
 
 
 closeOverlay.addEventListener("click", () =>{
     burgerOverlay.style.display = "none"
     burgerOverlay.classList.remove("active")
+    document.body.style.overflow = ""
+
 
 })
+
+let navContainer = document.querySelector(".nav-container")
+
+let panelContainer = document.querySelector(".panel-container")
+
+
+let parentPanel = panelContainer.children
+
+const includesNavContainer = Array.from(parentPanel).includes(document.querySelector('.nav-container'));
+
+if(window.innerWidth > 1000){
+    burgerOverlay.style.display = "none"
+}
+if(navContainer){
+
+}
+// if (navContainer) {
+//     if (window.innerWidth > 1000) {
+//         navContainer.style.display = "none";
+//     } else {
+//         if (includesNavContainer) {
+//             navContainer.style.display = "flex";
+//             navContainer.style.flexDirection = "column";
+//             navContainer.style.justifyContent = "center";
+//             navContainer.style.alignItems = "center";
+//         } else {
+//             navContainer.style.display = "none"; 
+//         }
+//     }
+// }
+
+
+// if(window.innerWidth > 1000){
+//     navContainer.style.display = "none"
+//     navContainer.style.display = "none"
+// }else{
+//     if(includesNavContainer) {
+//         navContainer.style.display = "flex";
+//         navContainer.style.flexDirection = "column";
+//         navContainer.style.justifyContent = "center";
+//         navContainer.style.alignItems = "center";
+//     }else {
+//         navContainer.style.display = "none"; 
+//     }
+// }
+
+    
+// }e
 
 
 
