@@ -19,8 +19,6 @@ body{
 
 main{
     @include flex-column-center(column,center,center);
-    // background-color: rgba(255, 0, 0, 0.323);
-
     margin-bottom: 80px;
     padding-top: 250px;
     gap: 50px;
@@ -32,29 +30,6 @@ main{
 }
 
 
-
-// Navigation top
-// .nav-wrapper {
-//     width: 100vw;
-//     margin: 0 auto;
-//     height: 100px;
-//     position: absolute;
-//     top: 50px;
-//     left: 50%;
-//     transform:translate(-50%,-50%);
-//     gap: 140px ;
-//  }
-
-// .navbar-wrapper.slide-down{
-//     position: fixed;
-//     animation: slidedown .4s forwards;
-//     gap: 100px;
-//     height: 100px;
-//     margin-top: 45px;
-//     transform: translate(-50%,-50%);
-//     background-color: rgba(0, 0, 0, 0.85);
-//     z-index: 1000; 
-// }
 .nav-wrapper{
     gap: 0px    
 }
@@ -134,13 +109,16 @@ nav.slide-down{
         @include flex-row-center(row,center,center);
         font-size: 16px;
         color: vars.$white;
-        font-weight: vars.$font-weight-600
+        font-weight: vars.$font-weight-600;
+        height: 100%;
     }
     ul{
         li{
             padding: 0px 30px;
             @include svg-fill-hover(vars.$white, vars.$orange);
             @include hover-animation(0.1s, ease-in, vars.$orange, pointer);
+            @include flex-row-center(row,center,center);
+            height: 100%;
         }
         .ct-toggle-dropdown-desktop{
             margin-left: 10px;
@@ -155,28 +133,56 @@ nav.slide-down{
         // }
     }
 }
-
+#features-hover{
+    @include svg-fill-hover(vars.$white, vars.$orange);
+    @include hover-animation(0.1s, ease-in, vars.$orange, pointer);
+    color: vars.$white;
+    text-decoration: none;
+}
+#home-page{
+    @include svg-fill-hover(vars.$white, vars.$orange);
+    @include hover-animation(0.1s, ease-in, vars.$orange, pointer);
+    color: vars.$white;
+    text-decoration: none;
+}
 .sub-menu{
     background: vars.$white;
-    @include flex-row-center(row,center,center);
+    display: none;
     border-radius: 15px;
     position:fixed;
     top:100px;
+    transition: display 0.3s  ease-in-out;
+    // max-width: 1200px;
+    max-width: 800px;  
+    
+    justify-content: space-between
 }
+
+.visible{
+    // visibility: visible ;
+    @include flex-row-center(row,center,center);
+    justify-content: space-between;
+    // justify-content: start;
+    gap :0px;
+    
+}
+
+
 .sub-menu-right{
-    // background: vars.$white;
     padding: 15px 0 15px 15px;
+    width: 50%;
+    // width: calc(35% - 0px - 0px)
 }
 .sub-menu-right ul{
     @include flex-column-center(column,center,center);
-    
+    align-items: start
 }
 .sub-menu-list{
     @include flex-row-center(flex,center,center);
     column-gap: 15px;
     padding: 15px !important;
-    // padding-left: 0px;
 }
+
 .sub-menu-list-icon{
     .sub-menu-icon-circle{
         border: 2px solid #8786861f;
@@ -184,6 +190,9 @@ nav.slide-down{
         width: 50px;
         height: 50px;
         padding: 14px;
+        transition: background-color 0.3s ease;
+        
+        // background-color: black;
         .sub-menu-icon svg{
             height: 18px !important;
             width: 18px !important;
@@ -191,10 +200,100 @@ nav.slide-down{
             margin: 0 !important;
             transition: inherit;
             fill:vars.$orange;
+            transition: fill 0.3s ease;
         }
     }
 
 }
+
+.sub-menu-left{
+    height: 389px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    z-index: 1;
+    width: 50%;
+    // width: calc(29.97% - 0px - 0px);
+    
+
+}
+
+.sub-menu-left-container{
+    height: 100%;
+    z-index: 0;
+    padding: 30px;
+    // background-image: url(https://startersites.io/blocksy/smart-home/wp-content/uploads/2023/12/mega-menu-image.webp);
+
+    border-top-right-radius: 15px;
+    @include flex-column-center(column,center,center);
+    justify-content: end;
+    align-items: start;
+    border-bottom-right-radius: 15px;
+
+    height: 100%;
+
+    position: relative;
+    margin-bottom: 0;
+    padding: 30px;
+    isolation: isolate;
+
+}
+.sub-menu-left-image-container{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 20%;
+    img{
+        object-fit: cover;
+        object-position: 50% 50%;
+        vertical-align: top;
+        display: inline-block;
+        box-sizing: border-box;
+        max-width: 100%;
+        width: 100%;
+        height: 100%;
+    }
+}
+.sub-menu-left-container-cover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    // width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, .64) 16%, transparent 100%);
+}
+.sub-menu-left-container-cover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, .64) 16%, transparent 100%);
+}
+.sub-menu-left-header{
+    h5{
+        margin-top: 0;
+        margin-bottom: 30px;
+        max-width: 200px;
+        font-size: 20px;
+    }
+}
+.sub-menu-left-button {
+    button{
+        padding: 12px 15px;
+        background: #e17335;
+        color: #ffffff;
+        border: none;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 15px;
+    }
+}
+
 .sub-menu-list-text{
     .sub-menu-list-text-header h6 {
         font-size: 15px;
@@ -211,6 +310,45 @@ nav.slide-down{
     text-align: left;
     
 }
+.sub-menu-center{
+    padding: 15px 15px 15px 0px;
+    width: 50%;
+}
+.sub-menu-right ul li{
+    border-radius: 15px;
+    transition: background-color 0.3s ease;
+    &:hover{
+        background-color: vars.$hover-white;
+    }
+}
+
+.sub-menu-center ul li{
+    border-radius: 15px;
+    transition: background-color 0.3s ease;
+    &:hover{
+        background-color: vars.$hover-white;
+        
+    }
+}
+
+.sub-menu-list{
+    &:hover{
+        .sub-menu-icon-circle{
+            background-color: vars.$orange;
+        }
+        .sub-menu-icon svg{
+            fill: vars.$white;
+        }
+    }
+}
+
+
+
+.sub-menu-center ul{
+    @include flex-column-center(column,center,center);
+    align-items: start;
+}
+
 // .sub-menu-list-text-header{}
 // Side buttons
 

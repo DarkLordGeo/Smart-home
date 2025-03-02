@@ -2,45 +2,6 @@ import './style.scss'
 
 
 
-
-
-// window.addEventListener("load", () => {
-    
-//     let loadAnimation =  document.querySelectorAll(".number-digit")
-
-//     let loadAnimationParent = document.querySelector(".numbers-row")
-
-
-//     let interval = 2000;
-
-//     let rect = loadAnimationParent.getBoundingClientRect()
-//     if(scrollY > rect.top){
-//         loadAnimation.forEach((loadAnimation) => {
-//             let startValue = 0
-        
-//             let endvalue = parseInt(loadAnimation.getAttribute("data-val"))
-            
-//             let duration = Math.floor((interval/endvalue))
-        
-//             let counter = setInterval(() => {
-//                 startValue += 1
-//                 loadAnimation.textContent = startValue
-//                 if(startValue === endvalue){
-//                     clearInterval(counter)
-//                 }
-//             }, duration);
-        
-//         })
-        
-//     }
-//     else{
-//         console.log("not working");
-//     }
-// })
-
-
-
-
 window.addEventListener("load", () => {
     let loadAnimation = document.querySelectorAll(".number-digit");
     let loadAnimationParent = document.querySelector(".numbers-row");
@@ -130,38 +91,29 @@ if(window.innerWidth > 1000){
 if(navContainer){
 
 }
-// if (navContainer) {
-//     if (window.innerWidth > 1000) {
-//         navContainer.style.display = "none";
-//     } else {
-//         if (includesNavContainer) {
-//             navContainer.style.display = "flex";
-//             navContainer.style.flexDirection = "column";
-//             navContainer.style.justifyContent = "center";
-//             navContainer.style.alignItems = "center";
-//         } else {
-//             navContainer.style.display = "none"; 
-//         }
-//     }
-// }
-
-
-// if(window.innerWidth > 1000){
-//     navContainer.style.display = "none"
-//     navContainer.style.display = "none"
-// }else{
-//     if(includesNavContainer) {
-//         navContainer.style.display = "flex";
-//         navContainer.style.flexDirection = "column";
-//         navContainer.style.justifyContent = "center";
-//         navContainer.style.alignItems = "center";
-//     }else {
-//         navContainer.style.display = "none"; 
-//     }
-// }
-
-    
-// }e
+ 
+let features = document.querySelector(".features-hover")
+let subMenu = document.querySelector(".sub-menu")
 
 
 
+features.addEventListener("mouseover", () => {
+    subMenu.classList.add("visible"); 
+});
+
+features.addEventListener("mouseleave", () => {
+    setTimeout(() => {
+        if (!subMenu.matches(":hover")) {
+            subMenu.classList.remove("visible");
+        }
+    }, 100); 
+});
+
+subMenu.addEventListener("mouseleave", () => {
+    subMenu.classList.remove("visible"); 
+});
+
+
+features.addEventListener("click", ()=>{
+    window.location.href = "/Smart-home/features.html"
+})
