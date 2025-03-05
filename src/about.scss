@@ -126,6 +126,12 @@ nav.slide-down{
     color: vars.$white;
     text-decoration: none;
 }
+#blog{
+    @include svg-fill-hover(vars.$white, vars.$orange);
+    @include hover-animation(0.1s, ease-in, vars.$orange, pointer);
+    color: vars.$white;
+    text-decoration: none;
+}
 .sub-menu{
     background: vars.$white;
     display: none;
@@ -378,6 +384,12 @@ nav.slide-down{
     text-decoration: none;
 }
 #about{
+    @include svg-fill-hover(vars.$white, vars.$orange);
+    @include hover-animation(0.1s, ease-in, vars.$orange, pointer);
+    color: vars.$white;
+    text-decoration: none;
+}
+#blog{
     @include svg-fill-hover(vars.$white, vars.$orange);
     @include hover-animation(0.1s, ease-in, vars.$orange, pointer);
     color: vars.$white;
@@ -778,7 +790,7 @@ nav.slide-down{
 
 
 
-   footer{
+footer{
     @include flex-row-center(row,center,center);
     padding-top: 60px;
     // width: 90vw;
