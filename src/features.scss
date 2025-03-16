@@ -140,6 +140,12 @@ nav.slide-down{
     color: vars.$white;
     text-decoration: none;
 }
+#contact{
+    @include svg-fill-hover(vars.$white, vars.$orange);
+    @include hover-animation(0.1s, ease-in, vars.$orange, pointer);
+    color: vars.$white;
+    text-decoration: none;
+}
 .sub-menu{
     background: vars.$white;
     display: none;

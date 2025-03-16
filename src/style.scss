@@ -157,6 +157,12 @@ nav.slide-down{
     color: vars.$white;
     text-decoration: none;
 }
+#contact{
+    @include svg-fill-hover(vars.$white, vars.$orange);
+    @include hover-animation(0.1s, ease-in, vars.$orange, pointer);
+    color: vars.$white;
+    text-decoration: none;
+}
 .sub-menu{
     background: vars.$white;
     display: none;
@@ -1055,7 +1061,6 @@ footer{
     font-size: 16px;
 }
 
-
 // nav-links
 
 .nav-links{
@@ -1632,10 +1637,6 @@ footer{
         width: 100%;
         border-radius: 15px;
     }
-    // .how-it-works-card-container{
-    //     // align-content:center;
-    //     // justify-content: center;
-    // }
 
     // blog-texts
 
