@@ -8,6 +8,10 @@
 
 // Styles
 
+*::selection{
+    background-color: vars.$selection-orange;
+}
+
 body{
     background-color: vars.$black;
     box-sizing: border-box;
@@ -1381,6 +1385,7 @@ footer{
         @include flex-column-center(column,center,center);
     }
 
+    // iphone container
 
     .iphone-container{
         @include flex-row-center(row,center,center);

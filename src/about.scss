@@ -1,6 +1,9 @@
 @use './variables' as vars;
 @use '/src/mixins' as *;
 
+*::selection{
+    background-color: vars.$selection-orange;
+}
 
 body{
     background-color: vars.$black;

@@ -230,7 +230,8 @@
               <a href="blog.html" id="blog">
                 <li>Blog</li>
               </a>
-              <li>Contact</li>
+
+              <li id="contact-focus">Contact</li>
             </ul>
           </div>
   
@@ -278,84 +279,88 @@
     </div>
 
     <!-- contact us container -->
+    <div class="contact-us">
 
-    <div class="contact-us-container">
+      <div class="contact-us-container">
 
-      <div class="contact-us-header">
-        <div>Contact us in any way convenient for you</div>
-      </div>
-
-      <div class="how-it-works-cards">
+        <div class="contact-us-header">
+          <div>Contact us in any way convenient for you</div>
+        </div>
   
-        <div class="how-it-works-card">
-          <div class="how-it-works-icon-cont">
-            <svg xmlns="http://www.w3.org/2000/svg" style="width:5rem;height:5rem;margin:10px" viewBox="0 0 33.28 40"><path d="M16.64 40c-.29 0-.58-.08-.84-.25C15.15 39.32 0 29.07 0 16.64 0 12.2 1.73 8.02 4.87 4.88 8.02 1.73 12.19 0 16.64 0s8.62 1.73 11.76 4.87c3.14 3.14 4.87 7.32 4.87 11.76 0 12.43-15.15 22.68-15.8 23.11-.25.17-.55.25-.84.25Zm0-36.97c-3.64 0-7.05 1.42-9.63 3.99s-3.99 5.99-3.99 9.63c0 9.29 10.53 17.72 13.61 19.99 3.09-2.28 13.61-10.72 13.61-19.99 0-3.64-1.42-7.05-3.99-9.63s-5.99-3.99-9.63-3.99Zm0 20.17c-3.61 0-6.55-2.94-6.55-6.55s2.94-6.55 6.55-6.55 6.55 2.94 6.55 6.55-2.94 6.55-6.55 6.55Zm0-10.08a3.53 3.53 0 1 0-.001 7.059 3.53 3.53 0 0 0 .001-7.059Z"></path></svg>
-          </div>
-          <div class="how-it-works-icon-header">
-            <h3>Address</h3>
-          </div>
-          <div class="how-it-works-description">
-            60 Fremont Ave. Hamden, CT 06514
-          </div>
-        
-        </div>
-
-        <div class="how-it-works-card">
-          <div class="how-it-works-icon-cont">
-           
-            <svg xmlns="http://www.w3.org/2000/svg" style="width:5rem;height:5rem;margin:10px" viewBox="0 0 40 40"><path d="M20 40C8.97 40 0 31.03 0 20S8.97 0 20 0s20 8.97 20 20-8.97 20-20 20Zm0-36.7C10.79 3.3 3.3 10.79 3.3 20S10.79 36.7 20 36.7 36.7 29.21 36.7 20 29.21 3.3 20 3.3Zm8.81 21.11c.41-.82.08-1.81-.74-2.22l-6.43-3.21V8.99c0-.91-.74-1.65-1.65-1.65s-1.65.74-1.65 1.65V20c0 .63.35 1.2.91 1.48l7.34 3.67c.24.12.49.17.74.17.61 0 1.19-.33 1.48-.91Z"></path></svg>
+        <div class="how-it-works-cards">
+    
+            <div class="how-it-works-card">
+              <div class="how-it-works-icon-cont">
+                <svg xmlns="http://www.w3.org/2000/svg" style="width:5rem;height:5rem;margin:10px" viewBox="0 0 33.28 40"><path d="M16.64 40c-.29 0-.58-.08-.84-.25C15.15 39.32 0 29.07 0 16.64 0 12.2 1.73 8.02 4.87 4.88 8.02 1.73 12.19 0 16.64 0s8.62 1.73 11.76 4.87c3.14 3.14 4.87 7.32 4.87 11.76 0 12.43-15.15 22.68-15.8 23.11-.25.17-.55.25-.84.25Zm0-36.97c-3.64 0-7.05 1.42-9.63 3.99s-3.99 5.99-3.99 9.63c0 9.29 10.53 17.72 13.61 19.99 3.09-2.28 13.61-10.72 13.61-19.99 0-3.64-1.42-7.05-3.99-9.63s-5.99-3.99-9.63-3.99Zm0 20.17c-3.61 0-6.55-2.94-6.55-6.55s2.94-6.55 6.55-6.55 6.55 2.94 6.55 6.55-2.94 6.55-6.55 6.55Zm0-10.08a3.53 3.53 0 1 0-.001 7.059 3.53 3.53 0 0 0 .001-7.059Z"></path></svg>
+              </div>
+              <div class="how-it-works-icon-header">
+                <h3>Address</h3>
+              </div>
+              <div class="how-it-works-description">
+                60 Fremont Ave. Hamden, CT 06514
+              </div>
+            
+            </div>
+    
+            <div class="how-it-works-card">
+              <div class="how-it-works-icon-cont">
+               
+                <svg xmlns="http://www.w3.org/2000/svg" style="width:5rem;height:5rem;margin:10px" viewBox="0 0 40 40"><path d="M20 40C8.97 40 0 31.03 0 20S8.97 0 20 0s20 8.97 20 20-8.97 20-20 20Zm0-36.7C10.79 3.3 3.3 10.79 3.3 20S10.79 36.7 20 36.7 36.7 29.21 36.7 20 29.21 3.3 20 3.3Zm8.81 21.11c.41-.82.08-1.81-.74-2.22l-6.43-3.21V8.99c0-.91-.74-1.65-1.65-1.65s-1.65.74-1.65 1.65V20c0 .63.35 1.2.91 1.48l7.34 3.67c.24.12.49.17.74.17.61 0 1.19-.33 1.48-.91Z"></path></svg>
+              
+              </div>
+              <div class="how-it-works-icon-header">
+                <h3>Work hours</h3>
+              </div>
+              <div class="how-it-works-description">
+                Mon-Fri 08 AM – 08 PM
+                <br>
+                Sat-Sun 9AM – 3PM
+              </div>
+            
+            </div>
+    
+            <div class="how-it-works-card">
+              <div class="how-it-works-icon-cont">
+                <svg xmlns="http://www.w3.org/2000/svg" style="width:5rem;height:5rem;margin:10px" viewBox="0 0 40 32.66"><path d="M39.97 5.05C39.83 2.24 37.52 0 34.68 0H5.32C2.48 0 .18 2.24.03 5.04c-.02.09-.03.18-.03.27v22.03a5.33 5.33 0 0 0 5.32 5.32h29.36A5.33 5.33 0 0 0 40 27.34V5.31c0-.08-.01-.17-.03-.25ZM5.32 3.3h29.36c.84 0 1.57.52 1.87 1.26L20 16.14 3.45 4.56c.3-.74 1.02-1.26 1.87-1.26Zm29.36 26.06H5.32c-1.11 0-2.02-.91-2.02-2.02V8.49l15.75 11.02c.28.2.62.3.95.3s.66-.1.95-.3L36.7 8.48v18.85c0 1.11-.91 2.02-2.02 2.02Z"></path></svg>
+              </div>
+              <div class="how-it-works-icon-header">
+                <h3>Email</h3>
+              </div>
+              <div class="how-it-works-description">
+                contact@mail.com
+                <br>
+                info@mail.com
+              </div>
+            
+            </div>
+    
+            <div class="how-it-works-card">
+              <div class="how-it-works-icon-cont">
+                <svg xmlns="http://www.w3.org/2000/svg" style="width:5rem;height:5rem;margin:10px" viewBox="0 0 40 40.07"><path d="M34.66 40.07c-.16 0-.32 0-.49-.02-5.93-.65-11.69-2.69-16.67-5.92A37.756 37.756 0 0 1 5.94 22.56 38.243 38.243 0 0 1 .02 5.86 5.37 5.37 0 0 1 3.19.46C3.87.15 4.6 0 5.34 0h5.53c1.31.02 2.54.45 3.52 1.29s1.63 2.02 1.81 3.31c.22 1.66.62 3.28 1.2 4.84.36.95.44 1.99.22 2.99-.21 1-.71 1.92-1.43 2.65l-1.43 1.43c2.22 3.52 5.2 6.5 8.72 8.72l1.43-1.43a5.31 5.31 0 0 1 2.65-1.43c1-.21 2.04-.14 3 .22 1.55.58 3.17.98 4.82 1.2 1.31.19 2.5.84 3.35 1.84.84 1 1.29 2.26 1.27 3.57v5.51a5.397 5.397 0 0 1-1.73 3.96c-.56.51-1.2.89-1.9 1.13-.56.19-1.13.28-1.71.28ZM10.91 3.32H5.34c-.28 0-.56.06-.82.17a2.008 2.008 0 0 0-1.1 1.21c-.09.26-.12.55-.1.83.57 5.39 2.44 10.67 5.4 15.24 2.69 4.24 6.34 7.88 10.56 10.57 4.56 2.96 9.81 4.83 15.21 5.41.25.02.53-.01.8-.1.27-.09.51-.23.72-.43.21-.19.37-.42.49-.68.11-.26.17-.53.17-.82v-5.58c.01-.5-.16-.98-.48-1.36-.32-.38-.77-.63-1.27-.7-1.87-.25-3.74-.71-5.53-1.38a2.022 2.022 0 0 0-2.14.45l-2.33 2.34c-.53.53-1.35.64-1.99.27a31.09 31.09 0 0 1-11.69-11.69c-.37-.65-.26-1.47.27-1.99l2.34-2.34c.27-.27.45-.62.54-1 .08-.38.05-.77-.09-1.14-.67-1.79-1.13-3.66-1.38-5.55a2.017 2.017 0 0 0-2-1.73Z"></path></svg>
+              </div>
+              <div class="how-it-works-icon-header">
+                <h3>Phone</h3>
+              </div>
+              <div class="how-it-works-description">
+                (332) 938-3695
+                <br>
+                (452) 892-2303
+    
+              </div>
+            
+            </div>
           
-          </div>
-          <div class="how-it-works-icon-header">
-            <h3>Work hours</h3>
-          </div>
-          <div class="how-it-works-description">
-            Mon-Fri 08 AM – 08 PM
-            <br>
-            Sat-Sun 9AM – 3PM
-          </div>
-        
         </div>
-
-        <div class="how-it-works-card">
-          <div class="how-it-works-icon-cont">
-            <svg xmlns="http://www.w3.org/2000/svg" style="width:5rem;height:5rem;margin:10px" viewBox="0 0 40 32.66"><path d="M39.97 5.05C39.83 2.24 37.52 0 34.68 0H5.32C2.48 0 .18 2.24.03 5.04c-.02.09-.03.18-.03.27v22.03a5.33 5.33 0 0 0 5.32 5.32h29.36A5.33 5.33 0 0 0 40 27.34V5.31c0-.08-.01-.17-.03-.25ZM5.32 3.3h29.36c.84 0 1.57.52 1.87 1.26L20 16.14 3.45 4.56c.3-.74 1.02-1.26 1.87-1.26Zm29.36 26.06H5.32c-1.11 0-2.02-.91-2.02-2.02V8.49l15.75 11.02c.28.2.62.3.95.3s.66-.1.95-.3L36.7 8.48v18.85c0 1.11-.91 2.02-2.02 2.02Z"></path></svg>
-          </div>
-          <div class="how-it-works-icon-header">
-            <h3>Email</h3>
-          </div>
-          <div class="how-it-works-description">
-            contact@mail.com
-            <br>
-            info@mail.com
-          </div>
-        
-        </div>
-
-        <div class="how-it-works-card">
-          <div class="how-it-works-icon-cont">
-            <svg xmlns="http://www.w3.org/2000/svg" style="width:5rem;height:5rem;margin:10px" viewBox="0 0 40 40.07"><path d="M34.66 40.07c-.16 0-.32 0-.49-.02-5.93-.65-11.69-2.69-16.67-5.92A37.756 37.756 0 0 1 5.94 22.56 38.243 38.243 0 0 1 .02 5.86 5.37 5.37 0 0 1 3.19.46C3.87.15 4.6 0 5.34 0h5.53c1.31.02 2.54.45 3.52 1.29s1.63 2.02 1.81 3.31c.22 1.66.62 3.28 1.2 4.84.36.95.44 1.99.22 2.99-.21 1-.71 1.92-1.43 2.65l-1.43 1.43c2.22 3.52 5.2 6.5 8.72 8.72l1.43-1.43a5.31 5.31 0 0 1 2.65-1.43c1-.21 2.04-.14 3 .22 1.55.58 3.17.98 4.82 1.2 1.31.19 2.5.84 3.35 1.84.84 1 1.29 2.26 1.27 3.57v5.51a5.397 5.397 0 0 1-1.73 3.96c-.56.51-1.2.89-1.9 1.13-.56.19-1.13.28-1.71.28ZM10.91 3.32H5.34c-.28 0-.56.06-.82.17a2.008 2.008 0 0 0-1.1 1.21c-.09.26-.12.55-.1.83.57 5.39 2.44 10.67 5.4 15.24 2.69 4.24 6.34 7.88 10.56 10.57 4.56 2.96 9.81 4.83 15.21 5.41.25.02.53-.01.8-.1.27-.09.51-.23.72-.43.21-.19.37-.42.49-.68.11-.26.17-.53.17-.82v-5.58c.01-.5-.16-.98-.48-1.36-.32-.38-.77-.63-1.27-.7-1.87-.25-3.74-.71-5.53-1.38a2.022 2.022 0 0 0-2.14.45l-2.33 2.34c-.53.53-1.35.64-1.99.27a31.09 31.09 0 0 1-11.69-11.69c-.37-.65-.26-1.47.27-1.99l2.34-2.34c.27-.27.45-.62.54-1 .08-.38.05-.77-.09-1.14-.67-1.79-1.13-3.66-1.38-5.55a2.017 2.017 0 0 0-2-1.73Z"></path></svg>
-          </div>
-          <div class="how-it-works-icon-header">
-            <h3>Phone</h3>
-          </div>
-          <div class="how-it-works-description">
-            (332) 938-3695
-            <br>
-            (452) 892-2303
-
-          </div>
-        
-        </div>
-
+  
       </div>
-
 
     </div>
 
     <!-- contact us forms -->
     
-    <div class="contact-form-container">
+    <div class="contact-total-parent">
+      
+      <div class="contact-form-container">
         
         <div class="contact-form-picture">
 
@@ -377,7 +382,7 @@
                   <path d="M20,10.1c0-5.5-4.5-10-10-10S0,4.5,0,10.1c0,5,3.7,9.1,8.4,9.9v-7H5.9v-2.9h2.5V7.9C8.4,5.4,9.9,4,12.2,4c1.1,0,2.2,0.2,2.2,0.2v2.5h-1.3c-1.2,0-1.6,0.8-1.6,1.6v1.9h2.8L13.9,13h-2.3v7C16.3,19.2,20,15.1,20,10.1z"></path>
                 </svg>
               </span>				
-            </a>
+              </a>
                     
               <a href="#" data-network="twitter" aria-label="X (Twitter)">
                 <span class="ct-icon-container">
@@ -419,101 +424,112 @@
         </div>
   
         <div class="contact-form">
+
+          <div class="contact-form-container-parent">
+           
+            <div class="contact-form-header-texts">
   
-          <div class="contact-form-header-texts">
-  
-            <div class="contact-form-header">
-              Contact
+              <div class="contact-form-header">
+                Contact
+              </div>
+    
+              <div class="contact-form-sub-header">
+                Get in touch with our smart home experts today
+              </div>
+    
+              <div class="contact-form-text">
+                Condimentum ullamcorper pellentesque nullam tellus dis lorem nibh dictum. Amet vel cursus consequat iaculis ipsumut.
+              </div>
+    
             </div>
-  
-            <div class="contact-form-sub-header">
-              Get in touch with our smart home experts today
-            </div>
-  
-            <div class="contact-form-text">
-              Condimentum ullamcorper pellentesque nullam tellus dis lorem nibh dictum. Amet vel cursus consequat iaculis ipsumut.
-            </div>
-  
-          </div>
-  
-          <div class="contact-form-input-container">
-  
-            <div class="contact-form-first-row">
-  
-              <div class="f-name-container">
-                  <div class="fname-label">
-                    First Name
+    
+            <div class="contact-form-input-container">
+    
+              <div class="contact-form-first-row">
+    
+                <div class="f-name-container">
+                    <div class="fname-label">
+                      First Name
+                    </div>
+                    <div class="fname-input-container">
+                      <input type="text">
+                    </div>
+                </div>
+    
+                <div class="l-name-container">
+                  <div class="lname-label">
+                    Last Name
                   </div>
-                  <div class="fname-input-container">
+                  <div class="lname-input-container">
                     <input type="text">
                   </div>
-              </div>
-  
-              <div class="l-name-container">
-                <div class="lname-label">
-                  Last Name
                 </div>
-                <div class="lname-input-container">
-                  <input type="text">
-                </div>
+    
               </div>
-  
-            </div>
-  
-  
-            <div class="contact-form-second-row">
-  
-              <div class="f-name-container">
-                  <div class="fname-label">
-                    Email
+    
+    
+              <div class="contact-form-second-row">
+    
+                <div class="f-name-container">
+                    <div class="fname-label">
+                      Email
+                    </div>
+                    <div class="fname-input-container">
+                      <input type="text" placeholder="Email Address">
+                    </div>
+                </div>
+    
+                <div class="l-name-container">
+                  <div class="lname-label">
+                    Subject
                   </div>
-                  <div class="fname-input-container">
-                    <input type="text" placeholder="Email Address">
+                  <div class="lname-input-container">
+                    <input type="text">
                   </div>
-              </div>
-  
-              <div class="l-name-container">
-                <div class="lname-label">
-                  Subject
                 </div>
-                <div class="lname-input-container">
-                  <input type="text">
+                
+    
+              </div>
+    
+              <div class="message-box-container">
+    
+                <div class="message-label">
+                  Message
                 </div>
+    
+                <div class="message-box">
+                  <textarea>
+                    
+                  </textarea>
+                </div>
+    
               </div>
-              
-  
-            </div>
-  
-            <div class="message-box-container">
-  
-              <div class="message-label">
-                Message
+    
+              <div class="form-container-button">
+                <button>Send Message</button>
               </div>
-  
-              <div class="message-box">
-                <textarea>
-                  
-                </textarea>
-              </div>
-  
+    
             </div>
-  
-            <div class="form-container-button">
-              <button>Send Message</button>
-            </div>
-  
+          
           </div>
   
         </div>
   
 
+    
+      </div>
+    
     </div>
+
+
 
     <!-- map container -->
-
-    <div id="map">
-      <div class="gspb_id-gsbp-a2e6720 wp-block-greenshift-blocks-map"><div data-key="gspb_id_gsbp_a2e6720" class="gspb_map-wrapper gspb_osmap leaflet-container leaflet-touch leaflet-retina leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" id="gspb_map-gsbp-a2e6720" tabindex="0" style="position: relative;"><div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(92px, 0px, 0px);"><div class="leaflet-pane leaflet-tile-pane"><div class="leaflet-layer " style="z-index: 1; opacity: 1;"><div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 17; transform: translate3d(396px, 175px, 0px) scale(0.5);"></div><div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 18; transform: translate3d(262px, 112px, 0px) scale(1);"><img alt="" src="https://c.tile.openstreetmap.org/13/4094/2724.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(193px, -65px, 0px); opacity: 1;"><img alt="" src="https://b.tile.openstreetmap.org/13/4093/2724.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-63px, -65px, 0px); opacity: 1;"><img alt="" src="https://a.tile.openstreetmap.org/13/4095/2724.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(449px, -65px, 0px); opacity: 1;"><img alt="" src="https://a.tile.openstreetmap.org/13/4093/2723.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-63px, -321px, 0px); opacity: 1;"><img alt="" src="https://b.tile.openstreetmap.org/13/4094/2723.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(193px, -321px, 0px); opacity: 1;"><img alt="" src="https://c.tile.openstreetmap.org/13/4093/2725.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-63px, 191px, 0px); opacity: 1;"><img alt="" src="https://a.tile.openstreetmap.org/13/4094/2725.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(193px, 191px, 0px); opacity: 1;"><img alt="" src="https://a.tile.openstreetmap.org/13/4092/2724.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-319px, -65px, 0px); opacity: 1;"><img alt="" src="https://c.tile.openstreetmap.org/13/4092/2723.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-319px, -321px, 0px); opacity: 1;"><img alt="" src="https://c.tile.openstreetmap.org/13/4095/2723.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(449px, -321px, 0px); opacity: 1;"><img alt="" src="https://b.tile.openstreetmap.org/13/4092/2725.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-319px, 191px, 0px); opacity: 1;"><img alt="" src="https://b.tile.openstreetmap.org/13/4095/2725.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(449px, 191px, 0px); opacity: 1;"><img alt="" src="https://c.tile.openstreetmap.org/13/4091/2724.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-575px, -65px, 0px); opacity: 1;"><img alt="" src="https://b.tile.openstreetmap.org/13/4096/2724.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(705px, -65px, 0px); opacity: 1;"><img alt="" src="https://b.tile.openstreetmap.org/13/4091/2723.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-575px, -321px, 0px); opacity: 1;"><img alt="" src="https://a.tile.openstreetmap.org/13/4096/2723.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(705px, -321px, 0px); opacity: 1;"><img alt="" src="https://a.tile.openstreetmap.org/13/4091/2725.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-575px, 191px, 0px); opacity: 1;"><img alt="" src="https://c.tile.openstreetmap.org/13/4096/2725.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(705px, 191px, 0px); opacity: 1;"></div></div></div><div class="leaflet-pane leaflet-overlay-pane"></div><div class="leaflet-pane leaflet-shadow-pane"><img src="https://unpkg.com/leaflet@1.9.3/dist/images/marker-shadow.png" class="leaflet-marker-shadow leaflet-zoom-animated" alt="" style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(789px, 247px, 0px);"></div><div class="leaflet-pane leaflet-marker-pane"><img src="https://unpkg.com/leaflet@1.9.3/dist/images/marker-icon-2x.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" alt="Marker" tabindex="0" role="button" style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; transform: translate3d(789px, 247px, 0px); z-index: 247;"></div><div class="leaflet-pane leaflet-tooltip-pane"></div><div class="leaflet-pane leaflet-popup-pane"></div><div class="leaflet-proxy leaflet-zoom-animated" style="transform: translate3d(1.04815e+06px, 697497px, 0px) scale(4096);"></div></div><div class="leaflet-control-container"><div class="leaflet-top leaflet-left"><div class="leaflet-control-zoom leaflet-bar leaflet-control"><a class="leaflet-control-zoom-in" href="#" title="Zoom in" role="button" aria-label="Zoom in" aria-disabled="false"><span aria-hidden="true">+</span></a><a class="leaflet-control-zoom-out" href="#" title="Zoom out" role="button" aria-label="Zoom out" aria-disabled="false"><span aria-hidden="true">−</span></a></div></div><div class="leaflet-top leaflet-right"></div><div class="leaflet-bottom leaflet-left"></div><div class="leaflet-bottom leaflet-right"><div class="leaflet-control-attribution leaflet-control"><a href="https://leafletjs.com" title="A JavaScript library for interactive maps"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" class="leaflet-attribution-flag"><path fill="#4C7BE1" d="M0 0h12v4H0z"></path><path fill="#FFD500" d="M0 4h12v3H0z"></path><path fill="#E0BC00" d="M0 7h12v1H0z"></path></svg> Leaflet</a> <span aria-hidden="true">|</span> © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors</div></div></div></div></div>
+    <div class="map-parent">
+      <div id="map">
+        <div class="gspb_id-gsbp-a2e6720 wp-block-greenshift-blocks-map"><div data-key="gspb_id_gsbp_a2e6720" class="gspb_map-wrapper gspb_osmap leaflet-container leaflet-touch leaflet-retina leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" id="gspb_map-gsbp-a2e6720" tabindex="0" style="position: relative;"><div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(92px, 0px, 0px);"><div class="leaflet-pane leaflet-tile-pane"><div class="leaflet-layer " style="z-index: 1; opacity: 1;"><div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 17; transform: translate3d(396px, 175px, 0px) scale(0.5);"></div><div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 18; transform: translate3d(262px, 112px, 0px) scale(1);"><img alt="" src="https://c.tile.openstreetmap.org/13/4094/2724.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(193px, -65px, 0px); opacity: 1;"><img alt="" src="https://b.tile.openstreetmap.org/13/4093/2724.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-63px, -65px, 0px); opacity: 1;"><img alt="" src="https://a.tile.openstreetmap.org/13/4095/2724.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(449px, -65px, 0px); opacity: 1;"><img alt="" src="https://a.tile.openstreetmap.org/13/4093/2723.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-63px, -321px, 0px); opacity: 1;"><img alt="" src="https://b.tile.openstreetmap.org/13/4094/2723.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(193px, -321px, 0px); opacity: 1;"><img alt="" src="https://c.tile.openstreetmap.org/13/4093/2725.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-63px, 191px, 0px); opacity: 1;"><img alt="" src="https://a.tile.openstreetmap.org/13/4094/2725.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(193px, 191px, 0px); opacity: 1;"><img alt="" src="https://a.tile.openstreetmap.org/13/4092/2724.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-319px, -65px, 0px); opacity: 1;"><img alt="" src="https://c.tile.openstreetmap.org/13/4092/2723.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-319px, -321px, 0px); opacity: 1;"><img alt="" src="https://c.tile.openstreetmap.org/13/4095/2723.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(449px, -321px, 0px); opacity: 1;"><img alt="" src="https://b.tile.openstreetmap.org/13/4092/2725.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-319px, 191px, 0px); opacity: 1;"><img alt="" src="https://b.tile.openstreetmap.org/13/4095/2725.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(449px, 191px, 0px); opacity: 1;"><img alt="" src="https://c.tile.openstreetmap.org/13/4091/2724.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-575px, -65px, 0px); opacity: 1;"><img alt="" src="https://b.tile.openstreetmap.org/13/4096/2724.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(705px, -65px, 0px); opacity: 1;"><img alt="" src="https://b.tile.openstreetmap.org/13/4091/2723.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-575px, -321px, 0px); opacity: 1;"><img alt="" src="https://a.tile.openstreetmap.org/13/4096/2723.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(705px, -321px, 0px); opacity: 1;"><img alt="" src="https://a.tile.openstreetmap.org/13/4091/2725.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-575px, 191px, 0px); opacity: 1;"><img alt="" src="https://c.tile.openstreetmap.org/13/4096/2725.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(705px, 191px, 0px); opacity: 1;"></div></div></div><div class="leaflet-pane leaflet-overlay-pane"></div><div class="leaflet-pane leaflet-shadow-pane"><img src="https://unpkg.com/leaflet@1.9.3/dist/images/marker-shadow.png" class="leaflet-marker-shadow leaflet-zoom-animated" alt="" style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(789px, 247px, 0px);"></div><div class="leaflet-pane leaflet-marker-pane"><img src="https://unpkg.com/leaflet@1.9.3/dist/images/marker-icon-2x.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" alt="Marker" tabindex="0" role="button" style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; transform: translate3d(789px, 247px, 0px); z-index: 247;"></div><div class="leaflet-pane leaflet-tooltip-pane"></div><div class="leaflet-pane leaflet-popup-pane"></div><div class="leaflet-proxy leaflet-zoom-animated" style="transform: translate3d(1.04815e+06px, 697497px, 0px) scale(4096);"></div></div><div class="leaflet-control-container"><div class="leaflet-top leaflet-left"><div class="leaflet-control-zoom leaflet-bar leaflet-control"><a class="leaflet-control-zoom-in" href="#" title="Zoom in" role="button" aria-label="Zoom in" aria-disabled="false"><span aria-hidden="true">+</span></a><a class="leaflet-control-zoom-out" href="#" title="Zoom out" role="button" aria-label="Zoom out" aria-disabled="false"><span aria-hidden="true">−</span></a></div></div><div class="leaflet-top leaflet-right"></div><div class="leaflet-bottom leaflet-left"></div><div class="leaflet-bottom leaflet-right"><div class="leaflet-control-attribution leaflet-control"><a href="https://leafletjs.com" title="A JavaScript library for interactive maps"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" class="leaflet-attribution-flag"><path fill="#4C7BE1" d="M0 0h12v4H0z"></path><path fill="#FFD500" d="M0 4h12v3H0z"></path><path fill="#E0BC00" d="M0 7h12v1H0z"></path></svg> Leaflet</a> <span aria-hidden="true">|</span> © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors</div></div></div></div></div>
+      </div>
     </div>
+
 
     <!-- footer -->
 
@@ -729,6 +745,7 @@
     </footer>
 
 </body>
+
 <script>
   var map = L.map('map').setView([51.505, -0.09], 13);
 
@@ -739,5 +756,7 @@
   L.marker([51.5, -0.09]).addTo(map)
       .bindPopup('Smart-home')
       .openPopup();
+      
 </script>
+<script src="src/main.js"></script>
 </html>

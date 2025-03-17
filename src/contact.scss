@@ -1,7 +1,9 @@
 @use './variables' as vars;
 @use '/src/mixins' as *;
 
-
+*::selection{
+    background-color: vars.$selection-orange;
+}
 
 body{
     background-color: vars.$black;
@@ -390,6 +392,9 @@ nav.slide-down{
     color: vars.$white;
     text-decoration: none;
 }
+#contact-focus{
+    color: vars.$orange;
+}
 
 
 
@@ -403,6 +408,8 @@ nav.slide-down{
     margin-top: -50px;
     background-size: cover;   
     background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     background-image: url(https://startersites.io/blocksy/smart-home/wp-content/uploads/2023/12/contact-page-hero-image.webp);
     color: vars.$white;
     font-size: 25px;
@@ -414,13 +421,20 @@ nav.slide-down{
 
 // contact us container
 
+.contact-us{
+    align-items: center;
+    max-width: 90vw;
+    margin: 0 auto;
+    @include flex-row-center(row,center,center);
+
+}
+
 .contact-us-container{
     margin-bottom: 120px;
-    // width: 100%;
+    width: 100%;
     max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
 }
+
 .contact-us-header{
     margin: 0 auto 40px;
     max-width: 500px;
@@ -433,11 +447,12 @@ nav.slide-down{
 
 .how-it-works-cards{
     @include flex-row-center(row,center,center);
-    max-width: 1200px;
-    align-items: stretch;
     gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    gap: 20px;
     margin: 0 auto;
-    position: relative;
+    position: relative
 }
 
 .how-it-works-card{
@@ -445,9 +460,11 @@ nav.slide-down{
     padding: 50px 25px;
     background-color: vars.$black2;
     border-radius: 15px;
-    height: auto;
-    flex: 1;
-    // margin-top: -25px;
+    // height: auto;
+    min-height: 285px;
+    flex: 1 1 0; /* flex-grow, flex-shrink, flex-basis */
+    width: 100%; /* Ensure it takes full width */
+    box-sizing: border-box; /* Ensure padding is included in width */
     transition: background-color 0.3s ease ,box-shadow 0.3s ease , margin-top 0.3s ease, transform 0.3s ease;
 }
 .how-it-works-card:hover{
@@ -487,9 +504,21 @@ nav.slide-down{
 }
 
 // contact forms
+.contact-total-parent{
+    @include flex-column-center(column,center,center);
+    max-width: 90vw;
+    margin: 0 auto;
+    gap: 30px;
+    margin-bottom: 80px;
+}
+.contact-form-container-parent{
+    width: 100%;
+    max-width: 1200px;
+}
+
 .contact-form-container{
     @include flex-row-center(row,center,center);
-    margin-bottom: 120px;
+    // width: 100%;
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
@@ -508,11 +537,13 @@ nav.slide-down{
     padding: 40px;
     background-image: url(https://startersites.io/blocksy/smart-home/wp-content/uploads/2023/12/contact-form-image.webp);
     background-repeat: no-repeat;
+    background-position: center;  
+    background-size: cover;
     width: 33%;
     height: auto 100%;
     @include flex-row-center(row,center,center);
     align-items: end;
-    background-position: center;   
+    
 }
 .contact-form-socials-column{
     @include flex-column-center(column,center,center);
@@ -536,8 +567,11 @@ nav.slide-down{
         width: 37.5px;
         height: 37.5px;
         @include flex-row-center(row,center,center);
-        
+        transition: background-color 0.3s ease;
         border-radius: 50px;
+        &:hover{
+            background-color: vars.$orange
+        }
         .ct-icon-container{
             @include flex-row-center(row,center,center);
             align-items: center;
@@ -744,7 +778,7 @@ nav.slide-down{
         @include align-items-center(row,center,center);
         color: vars.$white;
         gap:5px;
-        padding: 10px 20px;
+        padding: 10px 23px;
         background: vars.$orange;
         border-radius: 10px;
         font-size: 16px;
@@ -754,6 +788,12 @@ nav.slide-down{
     }
 }
 // map
+.map-parent{
+    max-width: 90vw;
+    margin: 0 auto;
+    gap: 30px;
+    margin-bottom: 80px;
+}
 #map{
     @include flex-row-center(row,center,center);
     margin-bottom: 120px;
@@ -1068,6 +1108,264 @@ footer{
 
     .nav-link-footer ul li{
         @include hover-animation(0.3s, ease-in, vars.$orange, pointer,true);
+    }
+}
+
+// 1000px responsive
+
+@media (max-width:1000px) {
+    .burger-menu{
+        display: block;
+        fill: vars.$white;
+        width: 20px;
+        height: 20px;
+    }
+    .close-button{
+        fill: vars.$white;        
+        width: 12px;
+        display: block;
+        // display: none;
+        // display: block;
+    }
+    nav{
+        justify-content: space-evenly;
+        height: 70px;
+        top: 35px;
+    }
+    nav.slide-down{
+        height: 70px;
+        margin-top: 30px;
+    }
+    .nav-container{
+        display: none;
+    }
+    .download{
+        display: none;
+    }
+
+    .logo-container{
+        width: 40%;
+        justify-content: start;
+        img{
+            width: 123px;
+        }
+    }
+
+    .side-buttons-container{
+        width: 40%;
+        justify-content: end;
+
+    }
+    // hamburger menu
+    .burger-overlay{
+        @include flex-column-center(column,center,center);
+        width: 100%;
+        height:100%;
+        z-index: 100000;
+        position: fixed;
+        background-color: rgba(0, 0, 0, 0.965);
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+
+    }
+    .burger-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    // .burger-overlay.burger-block{
+    //     display: block
+    // }
+
+    .close-button-container{
+        @include flex-row-center(row,center,center);
+        justify-content: end;
+        width: 100%;
+        padding-top: 30px;
+        padding-left: 50px;
+        padding-right: 55px;
+        p{
+            color: vars.$white;
+        }
+    }
+    .panel-container{
+        padding: 30px;
+        width:100%;
+        @include flex-column-center(column,center,center);
+    }
+
+    
+    // how it works
+
+    .how-it-works-cards{
+        // @include flex-row-center(row,center,center);
+        width: 100%;
+        max-width: 1200px;
+       
+        margin: 0 auto;
+        position: relative;
+        // flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        gap: 30px;
+        // grid-gap: 30px
+
+    }
+    // how it works
+
+
+    // contact form
+
+    .contact-form-container{
+        @include flex-column-center(column,center,center);
+    }
+    .contact-form-picture{
+        width: 100%;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+
+        border-bottom-left-radius:0px;
+    }
+    .contact-form{
+        width: 100%;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 15px;
+        padding: 40px;
+    }
+
+
+    // footer
+
+
+
+    .help-you-relaxed-container{
+        flex-direction: column;
+        @include flex-column-center(column,center,center);
+    }
+    .help-your-relaxed-text{
+        width: 100%;
+        @include flex-column-center(column,center,center);
+        text-align: center;
+        margin-bottom:35px;
+    }
+    .help-you-relaxed-description{
+        text-align: center;
+    }
+    .learn-more-relaxed{
+        @include flex-column-center(column,center,center);
+    }
+    .learn-more-relaxed {
+        button{
+            margin-top: 0px;
+        }
+    }
+    // nav-links
+    .nav-links{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 60px;
+        grid-row-gap: 60px;
+    }
+    .smart-home-nav-link{
+        width: 100%;
+    }
+    .copy-right{
+        @include flex-column-center(column,center,center);
+    }
+
+
+
+}
+
+@media (max-width:690px){
+
+
+    // how it works
+
+    .how-it-works-cards{
+        @include flex-column-center(column,center,center);
+        width: 100%;
+        max-width: 1200px;
+       
+        margin: 0 auto;
+        position: relative;
+        // grid-template-columns: repeat(2, 1fr);
+        // grid-template-rows: repeat(2, 1fr);
+        // grid-column-gap: 0px;
+        // grid-row-gap: 0px;
+        gap: 30px;
+        // grid-gap: 30px
+
+    }
+
+    // footer
+
+    .nav-links{
+        @include flex-column-center(column,center,center);
+    }
+    .smart-home-nav-link{
+        @include flex-column-center(column,center,center);
+    }
+    .get-in-touch{
+        @include flex-column-center(column,center,center);
+        ul{
+        @include flex-column-center(column,center,center);
+
+        }
+    }
+
+    .usefull-links-info{
+        ul{
+        @include flex-column-center(column,center,center);
+        }
+    }
+    .newsettler{
+        @include flex-column-center(column,center,center);
+    }
+    .nav-link-footer{
+        display: none;
+    }
+
+    // forms
+
+    .contact-form-first-row{
+        @include flex-column-center(column,center,center);
+    }
+    .f-name-container{
+        width: 100%;
+        input{
+            width: 100%;
+        }
+    }
+    .l-name-container{
+        width: 100%;
+        input{
+            width: 100%;
+        }
+    }
+    .contact-form-second-row{
+        @include flex-column-center(column,center,center);
+
+    }
+
+    // footer
+    .help-you-relaxed-container{
+        padding: 30px;
+    }
+    .learn-more-relaxed{
+        button{
+            padding:15px 25px;
+        }
+    }
+    
+    .smart-home-logo-text{
+        text-align: center;
     }
 }
 
