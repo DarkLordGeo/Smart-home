@@ -413,11 +413,18 @@ nav.slide-down{
 // smart-services
 
 .smart-services{
-    @include flex-column-center(row,center,center);
     max-width: 90vw;
     margin: 0 auto;
     gap: 15px;
     margin-bottom: 80px;
+
+}
+.smart-services-parent{
+    @include flex-column-center(row,center,center);
+    max-width: 1200px;
+    gap: 30px;
+    margin: 0 auto;
+
 }
 .smart-services-header h2{
     font-weight: 700;
@@ -455,13 +462,23 @@ nav.slide-down{
 
 
 .glowing-row{
-    @include flex-row-center(row,center,center);
     max-width: 90vw;
     justify-content: space-between;
     margin: 0 auto;
-    flex-wrap: wrap;
-    gap: 30px;
+    // flex-wrap: wrap;
     margin-bottom: 120px;
+}
+.glowing-row-parent{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+    gap: 30px;
+
+
 }
 // .how-it-works-parent-container{
 //     margin-bottom: 120px;
@@ -544,6 +561,10 @@ nav.slide-down{
     align-items: center;
     max-width: 90vw;
     margin: 0 auto;
+}
+.smart-solutions-parent{
+    @include flex-column-center(column,center,center);
+    max-width: 1200px;
 }
 .smart-solutions-top{
     @include flex-row-center(row,center,center);
@@ -633,6 +654,7 @@ nav.slide-down{
 
 .smart-solutiuons-card-2{
     @include flex-column-center(column,center,center);
+    align-items: start;
     padding: 40px;
     background-image: url(https://startersites.io/blocksy/smart-home/wp-content/uploads/2023/12/services-page-gallery-image-2.webp);
     background-position: center;
@@ -666,7 +688,8 @@ nav.slide-down{
 }
 
 .row-card-1{
-    flex: 1;
+    // flex: 1;
+    // width: 377px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: 105%;
@@ -691,11 +714,16 @@ nav.slide-down{
 }
 
 .simple-steps-row{
-    max-width: 90vw;
     @include flex-row-center(row,center,center);
-    gap: 50px;
+
+    max-width: 90vw;
     margin: 0 auto;
     margin-bottom: 120px;
+}
+.simlpe-steps-parent{
+    @include flex-row-center(row,center,center);
+    max-width: 1200px;
+    gap: 50px;
 }
 .simple-steps-pic{
     background-image: url(https://startersites.io/blocksy/smart-home/wp-content/uploads/2023/12/services-page-steps-section-image.webp);
@@ -771,10 +799,15 @@ nav.slide-down{
 
 
 .pricing{
-    @include flex-column-center(column,center,center);
+    @include flex-row-center(row,center,center);
     max-width: 90vw;
     margin: 0 auto;
+}
+.pricing-parent{
+    max-width: 1200px;
+    @include flex-column-center(column,center,center);
     align-items: start;
+
 }
 .pricing-header{
     color: vars.$orange;
@@ -804,7 +837,8 @@ nav.slide-down{
     padding-left: 45px;
     background: vars.$black2;
     border-radius: 15px;
-
+    margin-right: 500px;
+    z-index: 0;
 
     width: calc(100% + 180px)
 }
@@ -837,12 +871,19 @@ nav.slide-down{
     font-size: 15px;
     color: vars.$gray2;
 }
+.pricing-row-overlay-container{
+    position: absolute;
+    @include flex-row-center(row,center,center);
+    gap: 30px;
+    margin-left: 340px;
 
+}
 .pricing-row-2{
     @include flex-column-center(column,center,center);
     padding: 70px 45px;
     background: vars.$orange;
     border-radius: 15px;
+    width: calc(70% - 0px - 10px);
 }
 
 .pricing-row2-icon-circle{
@@ -928,8 +969,11 @@ nav.slide-down{
     background-color: vars.$black2;
     padding: 45px;
     border-radius: 15px;
+    width: calc(70% - 0px - 10px);
+
 }
 .pricing-row3-icon-circle{
+    @include flex-row-center(row,center,center);
     margin-bottom: 30px !important;
     background-color: #000;
     padding: 20px;
@@ -984,6 +1028,10 @@ nav.slide-down{
     margin: 0 auto;
     width: 90vw;
 }
+.smart-benefits-parent{
+    max-width: 1200px;
+    margin-bottom: 60px;
+}
 .smart-benefits-texts{
     @include flex-column-center(column,center,center);
 }
@@ -1006,7 +1054,6 @@ nav.slide-down{
 .smart-benefits-video-container{
     @include flex-column-center(column,center,center);
     height: 630px;
-    width: 100%;
     background-image:url(https://startersites.io/blocksy/smart-home/wp-content/uploads/2023/12/services-page-video-cover.webp);
     border-radius:15px;
     svg{
@@ -1318,4 +1365,139 @@ footer{
     .nav-link-footer ul li{
         @include hover-animation(0.3s, ease-in, vars.$orange, pointer,true);
     }
+}
+
+// 1000px responsive
+
+@media (max-width:1000px) {
+    .burger-menu{
+        display: block;
+        fill: vars.$white;
+        width: 20px;
+        height: 20px;
+    }
+    .close-button{
+        fill: vars.$white;        
+        width: 12px;
+        display: block;
+        // display: none;
+        // display: block;
+    }
+    nav{
+        justify-content: space-evenly;
+        height: 70px;
+        top: 35px;
+    }
+    nav.slide-down{
+        height: 70px;
+        margin-top: 30px;
+    }
+    .nav-container{
+        display: none;
+    }
+    .download{
+        display: none;
+    }
+
+    .logo-container{
+        width: 40%;
+        justify-content: start;
+        img{
+            width: 123px;
+        }
+    }
+
+    .side-buttons-container{
+        width: 40%;
+        justify-content: end;
+
+    }
+    // hamburger menu
+    .burger-overlay{
+        @include flex-column-center(column,center,center);
+        width: 100%;
+        height:100%;
+        z-index: 100000;
+        position: fixed;
+        background-color: rgba(0, 0, 0, 0.965);
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+
+    }
+    .burger-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+    .close-button-container{
+        @include flex-row-center(row,center,center);
+        justify-content: end;
+        width: 100%;
+        padding-top: 30px;
+        padding-left: 50px;
+        padding-right: 55px;
+        p{
+            color: vars.$white;
+        }
+    }
+    .panel-container{
+        padding: 30px;
+        width:100%;
+        @include flex-column-center(column,center,center);
+    }
+
+    // blogs
+
+    .blog-parent-container{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+
+
+
+    // footer
+
+
+
+    .help-you-relaxed-container{
+        flex-direction: column;
+        @include flex-column-center(column,center,center);
+        padding: 30px;
+    }
+    .help-your-relaxed-text{
+        width: 100%;
+        @include flex-column-center(column,center,center);
+        text-align: center;
+        margin-bottom:35px;
+    }
+    .help-you-relaxed-description{
+        text-align: center;
+    }
+    .learn-more-relaxed{
+        @include flex-column-center(column,center,center);
+    }
+    .learn-more-relaxed {
+        button{
+            margin-top: 0px;
+        }
+    }
+    // nav-links
+    .nav-links{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 60px;
+        grid-row-gap: 60px;
+    }
+    .smart-home-nav-link{
+        width: 100%;
+    }
+    .copy-right{
+        @include flex-column-center(column,center,center);
+    }
+
+
+
 }
