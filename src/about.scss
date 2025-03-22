@@ -437,11 +437,15 @@ nav.slide-down{
 
 
 // smart steps
+.smart-steps-parent{
+    @include flex-row-center(row,center,center);
+    max-width: 90vw;
+    margin: 0 auto;
+}
 .smart-steps-row{
     @include flex-row-center(row,center,center);
     justify-content: space-between;
     display: flex;
-    // flex-wrap: wrap;
     margin-top: -80px;
     margin-bottom: 120px;
     max-width: 1200px;
@@ -554,11 +558,16 @@ nav.slide-down{
 }
 
 // our team
-
+.our-team-parent{
+    @include flex-column-center(column,center,center);
+    max-width: 90vw;
+    margin: 0 auto;
+}
 .our-team{
     @include flex-column-center(column,center,center);
     margin-top: 0;
     margin-bottom: 80px;
+    max-width: 1200px;
 }
 
 .our-team-text{
@@ -721,7 +730,10 @@ nav.slide-down{
 }
 
 // faq-container
-
+.faq-parent{
+    max-width: 90vw;
+    margin: 0 auto;
+}
 .faq-container{
     border-radius: 15px;
     background: vars.$black2;
@@ -753,7 +765,17 @@ nav.slide-down{
     font-size: 18px;
     font-weight: 700;
     background-color: vars.$hover-black;
-    
+    cursor: pointer;
+}
+
+.faq-container-answer{
+    background-color: vars.$hover-black;
+    padding: 10px 25px 25px;
+    color: vars.$gray2;
+    width: 100%;
+    margin-bottom: 15px;
+    display: none;
+    margin-top: -15px;
 }
 .question{
     text-align:start;
@@ -765,7 +787,18 @@ nav.slide-down{
     @include flex-row-center(row,center,center);
     cursor: pointer;
     .icon1{
-        margin-right: -12px;
+        margin-right: -11.5px;
+        // transform: rotate(-90deg);
+        // margin-bottom: -5px;
+        transition: transform 0.5s,
+                    margin-bottom 0.5s,
+                    margin-left 0.5s,
+        ;
+    }
+    .rotate{
+        transform: rotate(-90deg);
+        margin-bottom: -7px;
+        margin-left: -4px;
     }
     .icon2{
         margin-bottom: -4px;
@@ -1098,5 +1131,289 @@ footer{
 
     .nav-link-footer ul li{
         @include hover-animation(0.3s, ease-in, vars.$orange, pointer,true);
+    }
+}
+
+
+@media (max-width:1000px) {
+    .burger-menu{
+        display: block;
+        fill: vars.$white;
+        width: 20px;
+        height: 20px;
+    }
+    .close-button{
+        fill: vars.$white;        
+        width: 12px;
+        display: block;
+        // display: none;
+        // display: block;
+    }
+    nav{
+        justify-content: space-evenly;
+        height: 70px;
+        top: 35px;
+    }
+    nav.slide-down{
+        height: 70px;
+        margin-top: 30px;
+    }
+    .nav-container{
+        display: none;
+    }
+    .download{
+        display: none;
+    }
+    .logo-container{
+        width: 40%;
+        justify-content: start;
+        img{
+            width: 123px;
+        }
+    }
+    .side-buttons-container{
+        width: 40%;
+        justify-content: end;
+
+    }
+    // hamburger menu
+    .burger-overlay{
+        @include flex-column-center(column,center,center);
+        width: 100%;
+        height:100%;
+        z-index: 100000;
+        position: fixed;
+        background-color: rgba(0, 0, 0, 0.965);
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+
+    }
+    .burger-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+    .close-button-container{
+        @include flex-row-center(row,center,center);
+        justify-content: end;
+        width: 100%;
+        padding-top: 30px;
+        padding-left: 50px;
+        padding-right: 55px;
+        p{
+            color: vars.$white;
+        }
+    }
+    .panel-container{
+        padding: 30px;
+        width:100%;
+        @include flex-column-center(column,center,center);
+    }
+    // about
+    .about-display{
+        padding-top: 150px;
+        padding-bottom: 100px;
+        background-position: center;
+    }
+    // smart steps
+    
+    .smart-steps-row{
+        @include flex-column-center(column,center,center);
+    }
+    .simple-steps-column{
+        width: 100%;
+    }
+    .simple-steps-sub-header{
+        h2{
+            font-size: 30px;
+        }
+    }
+    .simple-steps-row1{
+        justify-content: space-between;
+        width: 100%;
+    }
+    .simple-steps-row2{
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .simple-steps-row1-card{
+        width: 100%;
+    }
+    .simple-steps-row1-description{
+        width: 100%;
+        p{
+            width: 100%;
+        }
+    }
+
+
+    .smart-steps-right{
+        width: 100%;
+    }
+    .smart-steps-image-container{
+        img{
+            height: 400px;
+            width: 100%;
+            object-fit: cover;
+            object-position: 50% 35%;
+        }
+    }
+    // sponsors
+    .sponsors-parent-container{
+        flex-wrap: wrap;
+        @include flex-row-center(row,center,center);
+        justify-content: space-evenly;
+        gap: 30px;
+    }
+    // footer
+
+
+
+    .help-you-relaxed-container{
+        flex-direction: column;
+        @include flex-column-center(column,center,center);
+        padding: 30px;
+    }
+    .help-your-relaxed-text{
+        width: 100%;
+        @include flex-column-center(column,center,center);
+        text-align: center;
+        margin-bottom:35px;
+    }
+    .help-you-relaxed-description{
+        text-align: center;
+    }
+    .learn-more-relaxed{
+        @include flex-column-center(column,center,center);
+    }
+    .learn-more-relaxed {
+        button{
+            margin-top: 0px;
+        }
+    }
+    // nav-links
+    .nav-links{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 60px;
+        grid-row-gap: 60px;
+    }
+    .smart-home-nav-link{
+        width: 100%;
+    }
+    .copy-right{
+        @include flex-column-center(column,center,center);
+    }
+
+
+
+}
+
+// 690px responsive
+
+@media (max-width:690px){
+    // smart home
+    .simple-steps-header{
+        width: 100%;
+        text-align: center
+    }
+    .simple-steps-sub-header{
+        width: 100%;
+        text-align: center
+    }
+    .simple-steps-description{
+        text-align: center
+    }
+    .simple-steps-row1{
+        @include flex-column-center(column,center,center);
+    }
+    .simple-steps-row1-card{
+        @include flex-column-center(column,center,center);
+    }
+    .simple-steps-row1-description{
+        text-align: center;
+        width: 100%;
+    }
+
+    .simple-steps-row2{
+        @include flex-column-center(column,center,center);
+
+    }
+    // description
+
+    .smart-step-image-description{
+        p{
+            text-align: center;
+        }
+    }
+
+    // our team
+    .our-team-subheader{
+        font-size: 25px;
+        text-align: center;
+    }
+    .our-team-cards{
+        width: 90vw;
+    }
+    .our-team-card-row1{
+        @include flex-column-center(column,center,center);
+        width: 100%;
+    }
+    .our-team-card{
+        width: 100%;
+        @include flex-column-center(column,center,center);
+    }
+    .our-team-card-image{
+        width: 100%;
+    }
+
+
+    // footer
+
+    .help-you-relaxed-container{
+        padding: 30px;
+    }
+
+    .learn-more-relaxed{
+        width: 100%;
+        button{
+            padding:15px 25px;
+            width: 100%;
+        }
+    }
+
+    .nav-links{
+        @include flex-column-center(column,center,center);
+    }
+    .smart-home-nav-link{
+        @include flex-column-center(column,center,center);
+    }
+    .get-in-touch{
+        @include flex-column-center(column,center,center);
+        ul{
+        @include flex-column-center(column,center,center);
+
+        }
+    }
+    .usefull-links-info{
+        ul{
+        @include flex-column-center(column,center,center);
+        }
+    }
+    .usefull-links{
+        text-align: center
+    }
+    .newsettler{
+        @include flex-column-center(column,center,center);
+    }
+    .nav-link-footer{
+        display: none;
+    }
+    
+    .smart-home-logo-text{
+        text-align: center;
     }
 }
