@@ -1,4 +1,4 @@
-import './style.scss'
+// import './style.scss'
 
 
 
@@ -38,10 +38,6 @@ window.addEventListener("load", () => {
 
     let navbar = document.getElementsByTagName("nav")[0]
     console.log(navbar);
-
-    // let navbarWrapper = document.querySelector(".nav-wrapper")
-
-    // let navbarWrapperRect = navbarWrapper.getBoundingClientRect();
 
     let rect = navbar.getBoundingClientRect()
 

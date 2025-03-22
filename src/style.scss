@@ -1355,18 +1355,16 @@ footer{
         background-color: rgba(0, 0, 0, 0.965);
         display: none;
         opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.3s ease, visibility 0.3s ease;
+        // visibility: hidden;
+        transition: opacity 0.3s ease;
 
     }
-    .burger-overlay.active {
+    .active {
         opacity: 1;
-        visibility: visible;
+        // visibility: visible;
     }
 
-    // .burger-overlay.burger-block{
-    //     display: block
-    // }
+
 
     .close-button-container{
         @include flex-row-center(row,center,center);
@@ -1380,9 +1378,61 @@ footer{
         }
     }
     .panel-container{
+        height: 100%;
         padding: 30px;
         width:100%;
         @include flex-column-center(column,center,center);
+    }
+
+    .panel-logo-container{
+        margin-bottom: 40px;
+        @include flex-column-center(column,center,center);
+        img{
+            width: 143px;
+        }
+    }
+
+    .panel-nav-container{
+        width: 100%;
+        ul{
+            width: 100%;
+            list-style: none;
+            padding:0;
+            @include flex-column-center(column,center,center);
+            font-size: 16px;
+            color: vars.$white;
+            font-weight: vars.$font-weight-600;
+            height: 100%;
+            li{
+                padding: 5px 0px;
+                font-size: 20px;    
+                a {
+                    text-decoration: none;
+                    color: inherit; 
+                    display: block; 
+                    padding: 5px 0; 
+                }
+            }
+        }
+        .panel-socials-container{
+            // width: 100vw;
+            width: 100%;
+        }
+        .panel-socials-container-row{
+            @include flex-row-center(row,center,center);
+
+        }
+        // ul{
+        //     li{
+        //         padding: 0px 30px;
+        //         @include svg-fill-hover(vars.$white, vars.$orange);
+        //         @include hover-animation(0.1s, ease-in, vars.$orange, pointer);
+        //         @include flex-row-center(row,center,center);
+        //         height: 100%;
+        //     }
+        //     .ct-toggle-dropdown-desktop{
+        //         margin-left: 10px;
+        //     }
     }
 
     // iphone container
