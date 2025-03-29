@@ -46,16 +46,85 @@ nav.slide-down{
     gap: 0px;
 }
 
-.burger-menu{
+.burger-overlay{
+    @include flex-column-center(column,center,center);
+    width: 100%;
+    height:100%;
+    z-index: 100000;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.965);
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+}
+.active {
+    opacity: 1;
+}
+
+
+
+.close-button-container{
+    @include flex-row-center(row,center,center);
+    justify-content: end;
+    width: 100%;
+    padding-top: 30px;
+    padding-left: 50px;
+    padding-right: 55px;
+    p{
+        color: vars.$white;
+    }
+}
+.panel-container{
+    height: 100%;
+    padding: 30px;
+    width:100%;
+    @include flex-column-center(column,center,center);
+}
+
+.panel-logo-container{
+    margin-bottom: 40px;
+    @include flex-column-center(column,center,center);
+    img{
+        width: 143px;
+    }
+}
+
+.panel-nav-container{
+    width: 100%;
+    ul{
+        width: 100%;
+        list-style: none;
+        padding:0;
+        @include flex-column-center(column,center,center);
+        font-size: 16px;
+        color: vars.$white;
+        font-weight: vars.$font-weight-600;
+        height: 100%;
+        li{
+            padding: 5px 0px;
+            font-size: 20px;    
+            a {
+                text-decoration: none;
+                color: inherit; 
+                display: block; 
+                padding: 5px 0; 
+            }
+        }
+    }
+    .panel-socials-container{
+        // width: 100vw;
+        width: 100%;
+    }
+    .panel-socials-container-row{
+        @include flex-row-center(row,center,center);
+
+    }
+}
+
+.burger-menu-container{
     display: none;
 }
-.close-button{
-    display: none;
-}
-
-
-
-
 
 
 @keyframes slidedown {
@@ -78,8 +147,6 @@ nav.slide-down{
 
 
 
-
-// Mid navigation 
 .nav-container{
     @include flex-row-center(row,center,center);
 
@@ -107,16 +174,9 @@ nav.slide-down{
         .ct-toggle-dropdown-desktop{
             margin-left: 10px;
         }
-        // .sub-menu{
-        //     background: vars.$white;
-        //     @include flex-row-center(flex,center,center);
-        //     border-radius: 15px;
-        // }
-        // .sub-menu-right{
-        //     background: red;
-        // }
     }
 }
+
 #features-hover{
     @include svg-fill-hover(vars.$white, vars.$orange);
     @include hover-animation(0.1s, ease-in, vars.$orange, pointer);
@@ -136,26 +196,21 @@ nav.slide-down{
     position:fixed;
     top:100px;
     transition: display 0.3s  ease-in-out;
-    // max-width: 1200px;
     max-width: 800px;  
-    
-    justify-content: space-between
+    justify-content: space-between;
+    margin-top: -20px
 }
 
 .visible{
-    // visibility: visible ;
     @include flex-row-center(row,center,center);
     justify-content: space-between;
-    // justify-content: start;
     gap :0px;
-    
 }
 
 
 .sub-menu-right{
     padding: 15px 0 15px 15px;
     width: 50%;
-    // width: calc(35% - 0px - 0px)
 }
 .sub-menu-right ul{
     @include flex-column-center(column,center,center);
@@ -205,16 +260,12 @@ nav.slide-down{
     height: 100%;
     z-index: 0;
     padding: 30px;
-    // background-image: url(https://startersites.io/blocksy/smart-home/wp-content/uploads/2023/12/mega-menu-image.webp);
-
     border-top-right-radius: 15px;
     @include flex-column-center(column,center,center);
     justify-content: end;
     align-items: start;
     border-bottom-right-radius: 15px;
-
     height: 100%;
-
     position: relative;
     margin-bottom: 0;
     padding: 30px;
@@ -244,7 +295,6 @@ nav.slide-down{
     position: absolute;
     top: 0;
     left: 0;
-    // width: 100%;
     height: 100%;
     z-index: -1;
     background-image: linear-gradient(0deg, rgba(0, 0, 0, .64) 16%, transparent 100%);
@@ -333,7 +383,6 @@ nav.slide-down{
     align-items: start;
 }
 
-// .sub-menu-list-text-header{}
 // Side buttons
 
 .switch{
@@ -368,6 +417,7 @@ nav.slide-down{
     @include flex-row-center(row,center,center);
     fill:vars.$white;
 }
+
 #features-hover{
     @include svg-fill-hover(vars.$white, vars.$orange);
     @include hover-animation(0.1s, ease-in, vars.$orange, pointer);

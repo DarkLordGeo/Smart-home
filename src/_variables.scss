@@ -1,3 +1,22 @@
+// Theme variables
+:root {
+    --bg-color: #000000;
+    --text-color: #ffffff;
+    --secondary-bg: #1a1a1a;
+    --hover-color: #e17335;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --icon-gray: rgb(135, 134, 134);
+}
+
+[data-theme="light"] {
+    --bg-color: #ffffff;
+    --text-color: #1a1a1a;
+    --secondary-bg: #f5f5f5;
+    --hover-color: #e17335;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --icon-gray: rgb(135, 134, 134);
+}
+
 // Color variables
 
 $black:#000000;

@@ -28,30 +28,108 @@ nav{
    top: 50px;
    left: 50%;
    transform:translate(-50%,-50%);
-   gap: 0px ;
+   gap: 0px;
+   transition: all 0.3s ease;
+   opacity: 1;
 }
 
 
 nav.slide-down{
     position: fixed;
-    animation: slidedown .4s forwards;
-    // gap: 100px;
+    animation: slidedown 0.4s ease forwards;
     height: 100px;
     margin-top: 45px;
     transform: translate(-50%,-50%);
     background-color: rgba(0, 0, 0, 0.85);
-    z-index: 1000; 
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 .slide-down{
     gap: 0px;
 }
+// burger menu
 
-.burger-menu{
+
+.burger-overlay{
+    @include flex-column-center(column,center,center);
+    width: 100%;
+    height:100%;
+    z-index: 100000;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.965);
     display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
 }
-.close-button{
-    display: none;
+.active {
+    opacity: 1;
 }
+
+
+
+.close-button-container{
+    @include flex-row-center(row,center,center);
+    justify-content: end;
+    width: 100%;
+    padding-top: 30px;
+    padding-left: 50px;
+    padding-right: 55px;
+    p{
+        color: vars.$white;
+    }
+}
+.panel-container{
+    height: 100%;
+    padding: 30px;
+    width:100%;
+    @include flex-column-center(column,center,center);
+}
+
+.panel-logo-container{
+    margin-bottom: 40px;
+    @include flex-column-center(column,center,center);
+    img{
+        width: 143px;
+    }
+}
+
+.panel-nav-container{
+    width: 100%;
+    ul{
+        width: 100%;
+        list-style: none;
+        padding:0;
+        @include flex-column-center(column,center,center);
+        font-size: 16px;
+        color: vars.$white;
+        font-weight: vars.$font-weight-600;
+        height: 100%;
+        li{
+            padding: 5px 0px;
+            font-size: 20px;    
+            color: vars.$white;
+            a {
+                text-decoration: none;
+                color: vars.$white; 
+                display: block; 
+                padding: 5px 0;
+                &:hover {
+                    color: vars.$orange;
+                }
+            }
+        }
+    }
+    .panel-socials-container{
+        width: 100%;
+    }
+    .panel-socials-container-row{
+        @include flex-row-center(row,center,center);
+    }
+}
+
+
+
 
 
 
@@ -59,13 +137,14 @@ nav.slide-down{
 
 
 @keyframes slidedown {
-    from{
-        top: -150px;
+    from {
+        top: -100px;
+        opacity: 0;
     }
-    to{
+    to {
         top: 0;
+        opacity: 1;
     }
-
 }
 
 // Logo container
@@ -103,6 +182,14 @@ nav.slide-down{
             @include hover-animation(0.1s, ease-in, vars.$orange, pointer);
             @include flex-row-center(row,center,center);
             height: 100%;
+            color: vars.$white;
+        }
+        a {
+            color: vars.$white;
+            text-decoration: none;
+            &:hover {
+                color: vars.$orange;
+            }
         }
         .ct-toggle-dropdown-desktop{
             margin-left: 10px;
@@ -1203,11 +1290,11 @@ footer{
             color: vars.$white;
         }
     }
-    .panel-container{
-        padding: 30px;
-        width:100%;
-        @include flex-column-center(column,center,center);
-    }
+    // .panel-container{
+    //     padding: 30px;
+    //     width:100%;
+    //     @include flex-column-center(column,center,center);
+    // }
     // about
     .about-display{
         padding-top: 150px;
@@ -1413,5 +1500,39 @@ footer{
     
     .smart-home-logo-text{
         text-align: center;
+    }
+}
+
+// Responsive styles
+@media screen and (max-width: 1000px) {
+    .burger-menu {
+        display: block;
+        cursor: pointer;
+    }
+
+    .nav-container {
+        display: none;
+    }
+
+    .burger-menu-container {
+        display: block;
+    }
+
+    nav {
+        padding: 0 20px;
+    }
+}
+
+@media screen and (min-width: 1001px) {
+    .burger-menu {
+        display: none;
+    }
+
+    .nav-container {
+        display: flex;
+    }
+
+    .burger-menu-container {
+        display: none;
     }
 }
