@@ -4,18 +4,48 @@
     --text-color: #ffffff;
     --secondary-bg: #1a1a1a;
     --hover-color: #e17335;
+
+    --hover-color-android-ios:black;
+
     --shadow-color: rgba(0, 0, 0, 0.1);
-    --icon-gray: rgb(135, 134, 134);
+    --bg-color-android-ios: #fff;
+    --android-ios-colors:black;
+
+
+    --header-color:#ffff;
+    --light-gray:#878686;
+
+
+
+    --dark-background:#131212;
+
+    --svg-gray:#fff;
+ 
+
 }
+
+
+
 
 [data-theme="light"] {
     --bg-color: #ffffff;
-    --text-color: #1a1a1a;
+    --bg-color-android-ios: black;
+    --android-ios-colors:#ffff;
+    --text-color: #000000;
     --secondary-bg: #f5f5f5;
     --hover-color: #e17335;
     --shadow-color: rgba(0, 0, 0, 0.1);
-    --icon-gray: rgb(135, 134, 134);
+    --header-color:black;
+    
+    --light-gray:#878686;
+
+    --dark-background:#F4F5F6;
+
+
+    --svg-gray:#878686;
+
 }
+
 
 // Color variables
 

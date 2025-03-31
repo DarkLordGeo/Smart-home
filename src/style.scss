@@ -12,29 +12,7 @@
     background-color: vars.$selection-orange;
 }
 
-:root {
-    --bg-color: #000000;
-    --text-color: #ffffff;
-    --secondary-bg: #1a1a1a;
-    --hover-color: #e17335;
 
-    --hover-color-android-ios:black;
-
-    --shadow-color: rgba(0, 0, 0, 0.1);
-    --bg-color-android-ios: #fff;
-    --android-ios-colors:black;
-
-}
-
-[data-theme="light"] {
-    --bg-color: #ffffff;
-    --bg-color-android-ios: black;
-    --android-ios-colors:#ffff;
-    --text-color: #000000;
-    --secondary-bg: #f5f5f5;
-    --hover-color: #e17335;
-    --shadow-color: rgba(0, 0, 0, 0.1);
-}
 
 
 body {
@@ -1231,22 +1209,20 @@ footer{
     margin-top: 0;
 }
 .get-in-touch-infos ul {
+    li{
+        @include hover-animation(0.1s, ease-in, vars.$orange, pointer);
+
+        @include svg-fill-hover(var(--text-color), vars.$orange);
+    }
     margin: 0;
     padding: 0;
     @include flex-column-center(column,center,center);
 
-    @include hover-animation(0.1s, ease-in, vars.$orange, pointer);
-
-    @include svg-fill-hover(vars.$white, vars.$orange);
 
     justify-content: start;
     align-items: start;
     gap: 15px ;
 }
-
-// ! #EC8E58 
-// ? selection color
-
 
 .get-in-touch-infos ul li{
     list-style-type: none;
@@ -1255,6 +1231,9 @@ footer{
     
     column-gap: 15px;
     align-items:start;
+}
+.get-in-touch-infos div{
+    color: var(--light-gray)
 }
 
 .get-in-touch-infos ul li{
@@ -1277,6 +1256,9 @@ footer{
     font-size: 18px;
     color: var(--text-color);
     margin-top: 0;
+}
+.get-in-touch-svg{
+    fill: var(--text-color);
 }
 .usefull-links-info ul li {
     span svg{
@@ -1364,12 +1346,9 @@ footer{
     list-style: none;
     @include flex-row-center(row,center,center);
     gap: 30px;
-    li{
-        span svg{
-            fill: var(--icon-gray);
-            @include svg-fill-hover(var(--icon-gray), var(--hover-color));
-        }
-
+    span svg{
+        fill: var(--svg-gray);
+        @include svg-fill-hover(var(--svg-gray), var(--hover-color));
     }
 }
 
@@ -1399,6 +1378,76 @@ footer{
         @include hover-animation(0.3s, ease-in, vars.$orange, pointer,true);
     }
 }
+
+
+
+.number-card{
+    @include flex-column-center(column,center,center);
+    gap: 0px;
+
+}
+.number-amount{
+    @include flex-column-center(column,center,center);
+}
+.numbers-conatiner-parent{
+    margin-bottom: 80px;
+}
+.how-it-works-card {
+    min-width: 100%;
+    max-width: 100%;
+}
+.unique-solutions-text{
+    h2{
+        font-size: 30px;
+    }
+}
+.how-it-works-else-cards{
+    margin-bottom: 80px;
+}
+.card-text-column{
+    background-size: cover;
+}
+.how-it-works-card-1{
+    background-size: cover;
+}
+.how-it-works-card-2{
+    background-size: cover;
+}
+
+// sponsors
+.sponsors{
+    margin-top: 80px;
+}
+
+.help-your-relaxed-text{
+    width: 100%;
+    @include flex-column-center(column,center,center);
+    text-align: center;
+    margin-bottom:35px;
+}
+.help-you-relaxed-description{
+    text-align: center;
+}
+.learn-more-relaxed{
+    @include flex-column-center(column,center,center);
+}
+.learn-more-relaxed {
+    button{
+        margin-top: 0px;
+    }
+}
+
+.copy-right{
+    @include flex-column-center(column,center,center);
+}
+.how-it-works-main-card-wrapper {
+    .card-text-column {
+        padding: 40px;
+        height: auto;
+        min-height: 300px;
+    }
+}
+
 
 
 
@@ -1477,7 +1526,6 @@ footer{
         display: none;
         opacity: 0;
         transition: opacity 0.3s ease;
-    
     }
     .active {
         opacity: 1;
@@ -1613,86 +1661,6 @@ footer{
 }
 
 
-
-    .number-card{
-        @include flex-column-center(column,center,center);
-        gap: 0px;
-
-    }
-    .number-amount{
-        @include flex-column-center(column,center,center);
-    }
-    .numbers-conatiner-parent{
-        margin-bottom: 80px;
-    }
-    // how-it-works-cards
-    // .how-it-works-cards{
-    //     grid-template-columns: repeat(2, 1fr);
-    // }
-    .how-it-works-card {
-        min-width: 100%;
-        max-width: 100%;
-    }
-    .unique-solutions-text{
-        h2{
-            font-size: 30px;
-        }
-    }
-    .how-it-works-else-cards{
-        margin-bottom: 80px;
-    }
-    .card-text-column{
-        background-size: cover;
-    }
-    .how-it-works-card-1{
-        background-size: cover;
-    }
-    .how-it-works-card-2{
-        background-size: cover;
-    }
-
-    // sponsors
-    .sponsors{
-        margin-top: 80px;
-    }
-
-    // footer
-    // .help-you-relaxed-container{
-    //     flex-direction: column;
-    //     @include flex-column-center(column,center,center);
-    // }
-    .help-your-relaxed-text{
-        width: 100%;
-        @include flex-column-center(column,center,center);
-        text-align: center;
-        margin-bottom:35px;
-    }
-    .help-you-relaxed-description{
-        text-align: center;
-    }
-    .learn-more-relaxed{
-        @include flex-column-center(column,center,center);
-    }
-    .learn-more-relaxed {
-        button{
-            margin-top: 0px;
-        }
-    }
-
-
-    // .smart-home-nav-link{
-    //     width: calc(25% - 40px);
-    // }
-    .copy-right{
-        @include flex-column-center(column,center,center);
-    }
-    .how-it-works-main-card-wrapper {
-        .card-text-column {
-            padding: 40px;
-            height: auto;
-            min-height: 300px;
-        }
-    }
 
 
 // 690px responsive
@@ -1848,6 +1816,7 @@ footer{
     .usefull-links-info{
         ul{
         @include flex-column-center(column,center,center);
+        color: var(--text-color)
         }
     }
     .newsettler{
