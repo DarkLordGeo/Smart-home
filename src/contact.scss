@@ -91,7 +91,7 @@ nav.slide-down{
             width: 100%;
             text-align: center;
         }
-        a:nth-of-type(4){
+        a:nth-of-type(5){
             color: vars.$orange;
         }
     }
@@ -210,13 +210,13 @@ nav.slide-down{
 #blog{
     @include svg-fill-hover(vars.$white, vars.$orange);
     @include hover-animation(0.1s, ease-in, vars.$orange, pointer);
-    color: vars.$orange;
+    color: var(--nav-gray);
     text-decoration: none;
 }
 #contact{
     @include svg-fill-hover(vars.$white, vars.$orange);
     @include hover-animation(0.1s, ease-in, vars.$orange, pointer);
-    color: var(--nav-gray);
+    color: vars.$orange;
     text-decoration: none;
 }
 
@@ -1597,6 +1597,7 @@ footer{
         height:100%;
         z-index: 100000;
         position: fixed;
+        top: 0;
         background-color: rgba(0, 0, 0, 0.965);
         display: none;
         opacity: 0;
