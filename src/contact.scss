@@ -5,13 +5,28 @@
     background-color: vars.$selection-orange;
 }
 
-body{
-    background-color: vars.$black;
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
-} 
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}   
+// Main contnet
+
+main{
+    @include flex-column-center(column,center,center);
+    margin-bottom: 80px;
+    padding-top: 250px;
+    gap: 50px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-image: url(https://startersites.io/blocksy/smart-home/wp-content/uploads/2024/06/home-hero-section-image.webp);
+
+}
 
 
 .nav-wrapper{
@@ -19,112 +34,111 @@ body{
 }
 
 nav{
-  @include  align-content-space-between(row,space-between,space-between);
-   width: 100%;  
-   justify-content: space-evenly;
-   margin: 0 auto;
-   height: 100px;
-   position: absolute;
-   top: 50px;
-   left: 50%;
-   transform:translate(-50%,-50%);
-   gap: 0px ;
-}
+    @include  align-content-space-between(row,space-between,space-between);
+    width: 100%;  
+    justify-content: space-evenly;
+    margin: 0 auto;
+    height: 100px;
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    gap: 0px ;
+ }
 
 
 nav.slide-down{
     position: fixed;
-    animation: slidedown .4s forwards;
-    // gap: 100px;
+    animation: slidedown 0.4s ease forwards;
     height: 100px;
     margin-top: 45px;
     transform: translate(-50%,-50%);
     background-color: rgba(0, 0, 0, 0.85);
-    z-index: 1000; 
-}
-.slide-down{
-    gap: 0px;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.burger-overlay{
-    @include flex-column-center(column,center,center);
-    width: 100%;
-    height:100%;
-    z-index: 100000;
-    position: fixed;
-    background-color: rgba(0, 0, 0, 0.965);
+.burger-menu{
     display: none;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-
-}
-.active {
-    opacity: 1;
 }
 
-
-
-.close-button-container{
-    @include flex-row-center(row,center,center);
-    justify-content: end;
-    width: 100%;
-    padding-top: 30px;
-    padding-left: 50px;
-    padding-right: 55px;
-    p{
-        color: vars.$white;
-    }
-}
 .panel-container{
     height: 100%;
     padding: 30px;
     width:100%;
     @include flex-column-center(column,center,center);
 }
-
 .panel-logo-container{
     margin-bottom: 40px;
-    @include flex-column-center(column,center,center);
-    img{
-        width: 143px;
-    }
 }
-
 .panel-nav-container{
     width: 100%;
     ul{
         width: 100%;
+        height: 100%;
         list-style: none;
         padding:0;
         @include flex-column-center(column,center,center);
+        gap: 3px;
         font-size: 16px;
         color: vars.$white;
         font-weight: vars.$font-weight-600;
-        height: 100%;
-        li{
+        a{
             padding: 5px 0px;
             font-size: 20px;    
-            a {
-                text-decoration: none;
-                color: inherit; 
-                display: block; 
-                padding: 5px 0; 
-            }
+            color: vars.$white;
+            text-decoration: none;
+            width: 100%;
+            text-align: center;
+        }
+        a:nth-of-type(4){
+            color: vars.$orange;
         }
     }
-    .panel-socials-container{
-        // width: 100vw;
-        width: 100%;
-    }
-    .panel-socials-container-row{
+    margin-bottom: 40px;
+    // .panel-socials-container{
+    //     width: 100%;
+    // }
+    // .panel-socials-container-row{
+    //     @include flex-row-center(row,center,center);
+    // }
+}
+.panel-socials-container{
+    @include flex-row-center(row,center,center);
+    gap: 15px;
+    span{
+        width: 30px;
+        height: 30px;
+        background: vars.$orange;
         @include flex-row-center(row,center,center);
-
+        border-radius: 25px;
+        svg{
+            width: 12px;
+            height: 12px;
+            fill: vars.$white;
+        }
     }
 }
 
-.burger-menu-container{
-    display: none;
+.close-button-container {
+    @include flex-row-center(row, center, center);
+    justify-content: end;
+    width: 100%;
+    padding: 30px 50px 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    
+    .close-button {
+        fill:vars.$gray1;
+        
+        width: 12px;
+        height: 12px;
+        cursor: pointer;
+        transition: fill 0.3s ease;
+    }
 }
+
 
 
 @keyframes slidedown {
@@ -137,6 +151,7 @@ nav.slide-down{
 
 }
 
+
 // Logo container
 .logo-container{
     width: auto;
@@ -147,13 +162,9 @@ nav.slide-down{
 
 
 
-.nav-container{
-    @include flex-row-center(row,center,center);
 
-}
-
+// Mid navigation 
 .nav-container{
-    // display: none;
     ul{
         list-style: none;
         padding:0;
@@ -177,18 +188,42 @@ nav.slide-down{
     }
 }
 
+
 #features-hover{
     @include svg-fill-hover(vars.$white, vars.$orange);
     @include hover-animation(0.1s, ease-in, vars.$orange, pointer);
-    color: vars.$white;
+    color: var(--nav-gray);
     text-decoration: none;
 }
 #home-page{
     @include svg-fill-hover(vars.$white, vars.$orange);
     @include hover-animation(0.1s, ease-in, vars.$orange, pointer);
-    color: vars.$white;
+    color: var(--nav-gray);
     text-decoration: none;
 }
+#about{
+    @include svg-fill-hover(vars.$white, vars.$orange);
+    @include hover-animation(0.1s, ease-in, vars.$orange, pointer);
+    color: var(--nav-gray);
+    text-decoration: none;
+}
+#blog{
+    @include svg-fill-hover(vars.$white, vars.$orange);
+    @include hover-animation(0.1s, ease-in, vars.$orange, pointer);
+    color: vars.$orange;
+    text-decoration: none;
+}
+#contact{
+    @include svg-fill-hover(vars.$white, vars.$orange);
+    @include hover-animation(0.1s, ease-in, vars.$orange, pointer);
+    color: var(--nav-gray);
+    text-decoration: none;
+}
+
+.burger-overlay{
+    display: none;
+}
+
 .sub-menu{
     background: vars.$white;
     display: none;
@@ -251,9 +286,6 @@ nav.slide-down{
     border-top-right-radius: 15px;
     z-index: 1;
     width: 50%;
-    // width: calc(29.97% - 0px - 0px);
-    
-
 }
 
 .sub-menu-left-container{
@@ -270,7 +302,6 @@ nav.slide-down{
     margin-bottom: 0;
     padding: 30px;
     isolation: isolate;
-
 }
 .sub-menu-left-image-container{
     position: absolute;
@@ -383,21 +414,42 @@ nav.slide-down{
     align-items: start;
 }
 
-// Side buttons
 
-.switch{
-  color: vars.$white;
-  margin-right: 20px;
-  @include svg-fill-hover(vars.$white, vars.$orange);
-  @include hover-animation(0.1s, ease-in, vars.$orange, pointer);
-  svg{
-    width: 20px;
-    height: 20px
-    }
-}
+.switch {
+    color: vars.$white;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    position: relative; 
+    display: inline-block; 
+    @include svg-fill-hover(vars.$white, vars.$orange);
+    @include hover-animation(0.1s, ease-in, vars.$orange, pointer);
+  }
+  
+  #night, #day {
+    width: 20px !important;
+    height: 20px !important;
+    fill: var(--nav-gray);
+  
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+  }
+  
+  #night.show, #day.show {
+    max-height: 50px;
+    opacity: 1;
+  }
+
+
+
 
 .side-buttons-container{
     @include flex-row-center(row,center,center);
+    gap: 20px;
 
 }
 
@@ -416,34 +468,6 @@ nav.slide-down{
 .download-icon{
     @include flex-row-center(row,center,center);
     fill:vars.$white;
-}
-
-#features-hover{
-    @include svg-fill-hover(vars.$white, vars.$orange);
-    @include hover-animation(0.1s, ease-in, vars.$orange, pointer);
-    color: vars.$white;
-    text-decoration: none;
-}
-#home-page{
-    @include svg-fill-hover(vars.$white, vars.$orange);
-    @include hover-animation(0.1s, ease-in, vars.$orange, pointer);
-    color: vars.$white;
-    text-decoration: none;
-}
-#about{
-    @include svg-fill-hover(vars.$white, vars.$orange);
-    @include hover-animation(0.1s, ease-in, vars.$orange, pointer);
-    color: vars.$white;
-    text-decoration: none;
-}
-#blog{
-    @include svg-fill-hover(vars.$white, vars.$orange);
-    @include hover-animation(0.1s, ease-in, vars.$orange, pointer);
-    color: vars.$white;
-    text-decoration: none;
-}
-#contact-focus{
-    color: vars.$orange;
 }
 
 
@@ -489,7 +513,7 @@ nav.slide-down{
     margin: 0 auto 40px;
     max-width: 500px;
     text-align: center !important;
-    color: vars.$white;
+    color: var(--text-color);
     font-size: 35px;
     font-weight: 700;
 }
@@ -508,9 +532,8 @@ nav.slide-down{
 .how-it-works-card{
     @include flex-column-center(column,center,center);
     padding: 50px 25px;
-    background-color: vars.$black2;
+    background-color: var(--secondary-bg);
     border-radius: 15px;
-    // height: auto;
     min-height: 285px;
     flex: 1 1 0; /* flex-grow, flex-shrink, flex-basis */
     width: 100%; /* Ensure it takes full width */
@@ -545,7 +568,7 @@ nav.slide-down{
     text-align: center !important;
     margin-top: 0;
     margin-bottom: 20px;
-    color:vars.$white;
+    color:var(--text-color);
 }
 
 .how-it-works-description{
@@ -637,7 +660,7 @@ nav.slide-down{
 .contact-form{
     padding: 60px;
     width: 66%;
-    background: vars.$black2;
+    background: var(--secondary-bg);
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
 }
@@ -655,7 +678,7 @@ nav.slide-down{
 
 .contact-form-sub-header{
     font-size: 35px;
-    color:vars.$white;
+    color:var(--text-color);
     font-weight: 600;
     margin-bottom: 10px
 }
@@ -860,14 +883,12 @@ nav.slide-down{
 
 // footer
 
-
 footer{
     @include flex-row-center(row,center,center);
     padding-top: 60px;
-    // width: 90vw;
     width: 100%;
     margin: 0 auto;
-    background:vars.$black2;
+    background: var(--secondary-bg);
 }
 .footer-parent-container{
     @include flex-row-center(row,center,center);
@@ -963,7 +984,7 @@ footer{
     line-height: 1em;
     margin-top: 7px;
     margin-bottom: 0;
-    color: vars.$white;
+    color: var(--text-color);
 }
 .smart-home-logo-text{
     margin-top: 0 !important;
@@ -989,26 +1010,24 @@ footer{
 .get-in-touch-header h3{
     margin-bottom: 15px;
     font-size: 18px;
-    color: vars.$white;
+    color: var(--text-color);
     margin-top: 0;
 }
 .get-in-touch-infos ul {
+    li{
+        @include hover-animation(0.1s, ease-in, vars.$orange, pointer);
+
+        @include svg-fill-hover(var(--text-color), vars.$orange);
+    }
     margin: 0;
     padding: 0;
     @include flex-column-center(column,center,center);
 
-    @include hover-animation(0.1s, ease-in, vars.$orange, pointer);
-
-    @include svg-fill-hover(vars.$white, vars.$orange);
 
     justify-content: start;
     align-items: start;
     gap: 15px ;
 }
-
-// ! #EC8E58 
-// ? selection color
-
 
 .get-in-touch-infos ul li{
     list-style-type: none;
@@ -1018,17 +1037,20 @@ footer{
     column-gap: 15px;
     align-items:start;
 }
+.get-in-touch-infos div{
+    color: var(--light-gray)
+}
 
 .get-in-touch-infos ul li{
     span svg{
-        fill: vars.$white;
+        fill: var(--icon-gray);
         width: 18px;
         height: 18px;
-        @include svg-fill-hover(vars.$white, vars.$orange);
+        @include svg-fill-hover(var(--icon-gray), var(--hover-color));
     }
     div{
-        color: vars.$gray2;
-        @include hover-animation(0.1s, ease-in, vars.$orange, pointer);
+        color: var(--icon-gray);
+        @include hover-animation(0.1s, ease-in, var(--hover-color), pointer);
 
     }
 }
@@ -1037,20 +1059,23 @@ footer{
 .usefull-links-header h3{
     margin-bottom: 15px;
     font-size: 18px;
-    color: vars.$white;
+    color: var(--text-color);
     margin-top: 0;
+}
+.get-in-touch-svg{
+    fill: var(--text-color);
 }
 .usefull-links-info ul li {
     span svg{
-        fill: vars.$white;
+        fill: var(--icon-gray);
         width: 6px !important;
         height: 12px !important;
         margin: 0 !important;
 
     }
     div{
-        color: vars.$gray2;
-        @include hover-animation(0.1s, ease-in, vars.$orange, pointer);
+        color: var(--icon-gray);
+        @include hover-animation(0.1s, ease-in, var(--hover-color), pointer);
     }
     list-style-type: none;
     @include flex-row-center(row,center,center);
@@ -1080,7 +1105,7 @@ footer{
 .newsettler-header h3{
     margin-bottom: 15px;
     font-size: 18px;
-    color: vars.$white;
+    color: var(--text-color);
     margin-top: 0;
 }
 .subscribe-newsettler{
@@ -1126,11 +1151,9 @@ footer{
     list-style: none;
     @include flex-row-center(row,center,center);
     gap: 30px;
-    li{
-        span svg{
-            @include svg-fill-hover(vars.$white, vars.$orange);
-        }
-
+    span svg{
+        fill: var(--svg-gray);
+        @include svg-fill-hover(var(--svg-gray), var(--hover-color));
     }
 }
 
@@ -1160,6 +1183,367 @@ footer{
         @include hover-animation(0.3s, ease-in, vars.$orange, pointer,true);
     }
 }
+
+
+
+.number-card{
+    @include flex-column-center(column,center,center);
+    gap: 0px;
+
+}
+.number-amount{
+    @include flex-column-center(column,center,center);
+}
+.numbers-conatiner-parent{
+    margin-bottom: 80px;
+}
+
+
+.unique-solutions-text{
+    h2{
+        font-size: 30px;
+    }
+}
+.how-it-works-else-cards{
+    margin-bottom: 80px;
+}
+.card-text-column{
+    background-size: cover;
+}
+
+
+// sponsors
+.sponsors{
+    margin-top: 80px;
+}
+
+.help-your-relaxed-text{
+    width: 100%;
+    @include flex-column-center(column,center,center);
+    text-align: center;
+    margin-bottom:35px;
+}
+.help-you-relaxed-description{
+    text-align: center;
+}
+.learn-more-relaxed{
+    @include flex-column-center(column,center,center);
+}
+.learn-more-relaxed {
+    button{
+        margin-top: 0px;
+    }
+}
+
+.copy-right{
+    @include flex-column-center(column,center,center);
+}
+.how-it-works-main-card-wrapper {
+    .card-text-column {
+        padding: 40px;
+        height: auto;
+        min-height: 300px;
+    }
+}
+
+
+
+
+// footer{
+//     @include flex-row-center(row,center,center);
+//     padding-top: 60px;
+//     // width: 90vw;
+//     width: 100%;
+//     margin: 0 auto;
+//     background:vars.$black2;
+// }
+// .footer-parent-container{
+//     @include flex-row-center(row,center,center);
+//     width: 90vw;
+//     margin: 0 auto;
+// }
+// .footer{
+//     @include flex-column-center(column,center,center);
+//     width: 100%;
+//     max-width: 1200px;
+// }
+// .help-you-relaxed-container{
+//     @include flex-row-center(row,center,center);
+//     justify-content: space-between;
+//     padding: 45px 55px;
+//     background: vars.$orange;
+//     border-radius: 25px;
+//     margin-bottom: 100px
+// }
+// .help-your-relaxed-text{
+//     @include flex-column-center(column,center,center);
+//     justify-content: start;
+//     align-items: start;
+//     width: 50%;
+// }
+// .learn-more-relaxed{
+//     @include align-items-end(row,flex-end,flex-end);
+//     width: 50%;
+
+//     button{
+//         margin-top: 30px;
+//         background: vars.$orange;
+//         color: vars.$white;
+//         border: none;
+//         border-radius: 10px;
+//         font-weight: vars.$font-weight-600;
+//         font-size: 16px;
+
+//         box-sizing: border-box;
+//         padding: 20px 23px;
+//         background-color: vars.$black;
+//         font-size: 17px;
+//         color: vars.$white;
+//         cursor: pointer;
+//         transition: background-color 0.2s ease;
+//     }
+//     button:hover{
+//         background-color: vars.$hover-black; 
+//     }
+// }
+// .help-you-relaxed-header h2{
+//     margin: 0px 0px 10px;
+//     font-size: 25px;
+//     color: vars.$white;
+// }
+// .help-you-relaxed-description{
+//     color: #ffffffba;
+//     margin-top: 0 !important;
+//     margin-bottom: 0 !important;
+//     font-size: 16px;
+// }
+
+// // nav-links
+
+// .nav-links{
+//     @include flex-row-center(row,center,center);
+//     gap: 50px;
+//     align-items: start;
+//     justify-content: space-between;
+//     margin-bottom: 80px;
+// }
+
+// .smart-home-nav-link{
+//     @include flex-column-center(column,center,center);
+//     align-items: start;
+//     justify-content: space-between;
+//     width: calc(25% - 40px);
+// }
+// .smart-home-logo{
+//     @include flex-row-center(row,center,center);
+//     justify-content: start;
+//     align-items: center;
+//     column-gap: 10px;
+//     margin-top: -12px;
+//     margin-bottom: 20px
+// }
+// .sm-home-logo img{
+//     width: 40px;
+
+// }
+// .sm-home-text h3{
+//     font-size: 18px;
+//     line-height: 1em;
+//     margin-top: 7px;
+//     margin-bottom: 0;
+//     color: vars.$white;
+// }
+// .smart-home-logo-text{
+//     margin-top: 0 !important;
+//     margin-bottom: 25px !important;
+//     color: vars.$gray2;
+//     font-size: 16px;
+// }
+// .availability{
+//     @include flex-row-center(row,center,center);
+//     gap:10px;
+// }
+// .availability-link svg{
+//     fill: vars.$gray2;
+//     margin: 0 !important;
+//     width: 130px !important;
+//     height: 40px !important;
+// }
+
+// .get-in-touch{
+//     @include flex-column-center(column,center,center);
+//     align-items: start;
+// }
+// .get-in-touch-header h3{
+//     margin-bottom: 15px;
+//     font-size: 18px;
+//     color: vars.$white;
+//     margin-top: 0;
+// }
+// .get-in-touch-infos ul {
+//     margin: 0;
+//     padding: 0;
+//     @include flex-column-center(column,center,center);
+
+//     @include hover-animation(0.1s, ease-in, vars.$orange, pointer);
+
+//     @include svg-fill-hover(vars.$white, vars.$orange);
+
+//     justify-content: start;
+//     align-items: start;
+//     gap: 15px ;
+// }
+
+// .get-in-touch-infos ul li{
+//     list-style-type: none;
+
+//     @include flex-row-center(row,center,center);
+    
+//     column-gap: 15px;
+//     align-items:start;
+// }
+
+// .get-in-touch-infos ul li{
+//     span svg{
+//         fill: vars.$white;
+//         width: 18px;
+//         height: 18px;
+//         @include svg-fill-hover(vars.$white, vars.$orange);
+//     }
+//     div{
+//         color: vars.$gray2;
+//         @include hover-animation(0.1s, ease-in, vars.$orange, pointer);
+
+//     }
+// }
+
+
+// .usefull-links-header h3{
+//     margin-bottom: 15px;
+//     font-size: 18px;
+//     color: vars.$white;
+//     margin-top: 0;
+// }
+// .usefull-links-info ul li {
+//     span svg{
+//         fill: vars.$white;
+//         width: 6px !important;
+//         height: 12px !important;
+//         margin: 0 !important;
+
+//     }
+//     div{
+//         color: vars.$gray2;
+//         @include hover-animation(0.1s, ease-in, vars.$orange, pointer);
+//     }
+//     list-style-type: none;
+//     @include flex-row-center(row,center,center);
+
+    
+
+//     column-gap: 15px;
+//     align-items:start;
+// }
+
+// .usefull-links-info ul{
+//     margin: 0;
+//     padding: 0;
+//     @include flex-column-center(column,center,center);
+//     justify-content: start;
+//     align-items: start;
+//     gap: 15px ;
+//     list-style: none;
+// }
+
+// .newsettler{
+//     @include flex-column-center(column,center,center);
+//     align-items: start;
+//     justify-content: start  ;
+
+// }
+// .newsettler-header h3{
+//     margin-bottom: 15px;
+//     font-size: 18px;
+//     color: vars.$white;
+//     margin-top: 0;
+// }
+// .subscribe-newsettler{
+//     margin-bottom: 15px !important;
+//     color: vars.$gray2;
+// }
+// .input-container{
+//     margin-bottom: 35px;
+//     padding: 7px;
+//     background-color:vars.$white;
+//     border-radius: 15px;
+//     @include flex-row-center(row,center,center);
+//     gap: 10px;
+//     width: 100%;
+//     input{
+//         color: vars.$gray2; 
+//         padding: 0px 15px;
+//         border: none;
+//         font-size: 16px;
+//         width: 70%;
+//     }
+//     input::placeholder{
+//         color: vars.$gray2; 
+//     }
+//     input:focus{
+//         outline: none;
+//     }
+//     button{
+//         padding: 10px 23px;
+//         font-size: 16px;
+//         color: vars.$white;
+//         border-radius: 10px;
+//         border: none;
+//         background: vars.$orange;
+//         font-weight: vars.$font-weight-600;
+//         @include  hover-background-orange(0.1s,ease-in,vars.$hover-orange,pointer);
+//     }
+// }
+
+// .socials-container ul{
+//     padding: 0;
+//     margin: 0;
+//     list-style: none;
+//     @include flex-row-center(row,center,center);
+//     gap: 30px;
+//     li{
+//         span svg{
+//             @include svg-fill-hover(vars.$white, vars.$orange);
+//         }
+
+//     }
+// }
+
+// // copyright 
+
+// .copy-right{
+//     padding: 20px 0px;
+//     @include flex-row-center(row,center,center);
+//     justify-content: space-between;
+//     width: 100%;
+//     gap: 20px;
+//     .copy-right-text{
+//         color:vars.$gray2;
+//         font-size: 14px;
+//         margin: 0;
+//     }
+//     .nav-link-footer ul{
+//         list-style-type: none;
+//         color:vars.$gray2;
+//         @include flex-row-center(row,center,center);
+//         padding: 0;
+//         margin: 0;
+//         gap: 30px;
+//     }
+
+//     .nav-link-footer ul li{
+//         @include hover-animation(0.3s, ease-in, vars.$orange, pointer,true);
+//     }
+// }
 
 // 1000px responsive
 
@@ -1264,7 +1648,7 @@ footer{
     }
 
     .how-it-works-cards{
-        // @include flex-row-center(row,center,center);
+        
         width: 100%;
         max-width: 1200px;
        
@@ -1366,16 +1750,9 @@ footer{
         @include flex-column-center(column,center,center);
         width: 100%;
         max-width: 1200px;
-       
         margin: 0 auto;
         position: relative;
-        // grid-template-columns: repeat(2, 1fr);
-        // grid-template-rows: repeat(2, 1fr);
-        // grid-column-gap: 0px;
-        // grid-row-gap: 0px;
         gap: 30px;
-        // grid-gap: 30px
-
     }
     // forms
 

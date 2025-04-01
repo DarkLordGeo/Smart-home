@@ -100,7 +100,7 @@ nav.slide-down{
             width: 100%;
             text-align: center;
         }
-        a:nth-of-type(2){
+        a:nth-of-type(3){
             color: vars.$orange;
         }
     }
@@ -774,7 +774,7 @@ nav.slide-down{
     // width: 377px;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: auto 100%;
+    background-size: cover;
     border-radius: 15px;
     height: 300px;
     overflow: hidden;
