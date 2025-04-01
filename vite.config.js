@@ -12,7 +12,7 @@ export default defineConfig({
         features: resolve(__dirname, 'features.html'),
         about: resolve(__dirname, 'about.html'),
         blog: resolve(__dirname, 'blog.html'),
-        contact: resolve(__dirname, 'contactx.html'),
+        contact: resolve(__dirname, 'contact.html'),
       },
     },
   },
